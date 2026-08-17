@@ -1,0 +1,112 @@
+---
+title: Installation
+---
+
+import Windows from "~/components/platform/Windows.astro"
+import MacOS from "~/components/platform/MacOS.astro"
+
+How you acquire and install Remote Incident Manager depends on your use case and configuration, but in any case the process is quite straight forward.
+<Windows>
+### Typical Installation for Individuals
+There is only one installation package to use, whether you are offering or receiving assistance.
+1. [Download Remote Incident Manager](https://getrim.app/win)
+1. Run the downloaded file.
+1. If you have user account control enabled, press Alt+Y to approve the installation.
+1. Once the file is launched, the installation will automatically commence. There are no next buttons to worry about. Just sit back, relax, and let it do its thing. Within seconds, the program will be installed and will launch automatically.  
+    1. The Welcome screen will allow you to choose how you will primarily use RIM. If you only plan on receiving support, press the "Receive Help Now" button. If you plan on providing support, click the "Provide Help Now" button. This decision is not final, as the mode can always be changed from within the application.
+
+That's all there is to it! A desktop shortcut will be automatically created to aid in subsequent launches of RIM. Additionally, RIM sets up a multipurpose global hotkey (Windows+Shift+Backspace) which, among other things, automatically launches the program from wherever you are.
+### Unattended or Prompted Access Installer
+If the person providing assistance has provided you a custom installer, you will be advised of this when the installer launches. This is because this installer will automatically configure RIM for what is known as either unattended or prompted access. This is what will allow the person helping you to initiate a session with your computer without you having to enter a keyword. We will cover these types of sessions indepth later on in this manual.
+
+### Installing without Administrative Privileges
+
+The Remote Incident Manager installer will always attempt to obtain administrator privileges. In environments where administrator privileges are unable to be obtained, the installation of RIM will be performed within the scope of the current user account, rather than at the system level.
+
+Running without admin does not result in any limitations on the controller side of RIM. There are, however, limitations you will encounter on the target machine.
+
+* RIM only runs when the Windows user that installed it is signed in. 
+* RIM doesn't run on the Windows sign-in screen. 
+* RIM has no access to the secure desktop; this means no access to UAC prompts, or to the sign-in screen when unlocking the machine. 
+* Remote keyboard input doesn't work if the focus on the target is in an elevated application, or even an application running with the Windows UI Access flag, such as an installed copy of a screen reader. 
+* The option to press Ctrl+Alt+Delete doesn't work. 
+
+As a controller, you will be able to attempt a re-installation of RIM with admin privileges during a session.
+
+### Silent Installation
+
+You'll want to do this when deploying RIM to multiple machines. Simply use the **/S** command line parameter in your deployment script. Note that it is case-sensitive, so a capital S is required.
+
+### Installing a Server Profile
+
+If you are receiving remote support from an organization who has a private RIM server, they will have sent you a link to a configuration page on that server. Once you click this link, you will arrive on a page that will provide instructions on how to install this server profile into your copy of RIM. Note that RIM must be installed in order for the profile to be added, thus the page will provide links to the installers if you have not yet installed RIM.
+
+### Additional Considerations for Windows Servers
+
+To install RIM on your Windows Server, connect to the server via RDP. In order to get the most stable connection experience, we recommend using the Remote Desktop app from the Microsoft Store.
+
+#### Obtaining Sound and running Narrator
+
+For Windows Server distributions prior to 2022, you will need to manually enable sound before launching Narrator. Do the following once connected:
+1. Press windows key+r.
+1. Type cmd and hit enter. Wait about ten seconds.
+1. Type:  
+**net start audiosrv**  
+and hit enter.
+
+In any case, press CTRL+Windows+Enter to enable Narrator. If everything worked properly, you should get speech.  
+You can now follow the install procedure as described above.
+Please note that for Windows Server distributions prior to 2022, if you need sound for subsequent connections via RIM, you will need to install a virtual sound output device on your server. The free version of [Virtual Audio Cable](https://vac.muzychenko.net/en/download.htm) should suffice.
+</Windows>
+<MacOS>
+### Typical Installation for Individuals
+
+There is only one installation package to use, whether you are offering or receiving assistance.
+1. [Download Remote Incident Manager](https://getrim.app/mac)
+1. Go to your downloads folder via Finder (Option+command+L). Locate the downloaded .pkg file and open it with Command+O.
+1. An installation wizard will appear. Follow the onscreen instructions.  
+You are all set to run Remote Incident Manager for the first time! You may run it from your applications folder, accessed via Command+Shift+A while located in Finder. You will be greeted with a welcome screen at first launch, allowing you to choose whether you would like to provide or receive remote help. This screen will only appear once.  
+Additionally, RIM sets up a multipurpose global hotkey (Option+Shift+Backspace) which, among other things, automatically launches the program from wherever you are.
+
+#### Installation Troubleshooting
+
+While every effort is made to ensure a smooth installation, sometimes problems do occur. The installer has a facility for us to be able to easily provide support for these rare and occasional errors. Should you encounter an error during the installation, press *Command+L* to go to the log viewer, engage with the toolbar, and then click "Save". You will be asked where you would like to save the log output; save it where you will be able to easily locate it. The resulting text file can then be sent to our support address, at which point it can be reviewed in order to locate a potential solution.
+
+### Permissions
+
+Due to macOS's precautionary behavior when dealing with applications of this nature for the first time, you will need to grant some permissions to Remote Incident Manager upon first launch. The number of permissions will vary depending on whether or not your Mac will be providing or receiving remote help.
+
+#### Karabiner HID driver (Target only)
+
+This is the driver that processes input from a controlling computer that is received by RIM. This is a system extension, thus you must manually approve it. Rim will bring up a system dialogue that will take you to the Privacy and Security section of system settings. You will then want to scroll until you locate the Allow button. Clicking this will prompt you for your password or touch ID.
+
+#### Notifications
+
+The next permission request from RIM will be for notifications. RIM will notify you when a session starts and ends. The procedure for granting this permission is slightly different.
+1. Access the notification center. If using VoiceOver, the notification center is accessed by pressing **VO+N**.
+1. Locate the notification from Remote Incident Manager, then activate it (*VO+Space*).
+1. Press **VO+Command+Space**, then activate the Allow option in the popup menu that appears.
+
+#### Receiving Input
+
+RIM needs permission to receive all the input directed to it over a remote connection.  
+Click "Continue" in the RIM window, at which point a system dialogue requesting accessibility service permissions will appear. If VoiceOver does not immediately focus it, press **VO+F1** twice quickly. Then, down arrow to "System dialogues," press right arrow, and then down to the input permissions request. Pressing enter on that will open the alert box, at which point you will want to follow it to System Settings and check the Remote Incident Manager box in the list of applications.
+
+#### Capturing Screen Output (Target only)
+
+The final permission request from RIM will be for capturing the screen output which will be piped across the remote connection. The procedure for this is similar to the previous procedure.
+
+#### Local Network Discovery Permissions
+
+This optional permission will only appear when you initiate a session involving a Mac on your local area network. Simply click the "Allow" button in the resulting dialog that appears, and this permission will be permanently granted.
+
+### Installing a Server Profile
+
+If you are receiving remote support from an organization who has a private RIM server, they will have sent you a link to a configuration page on that server. Once you click this link, you will arrive on a page that will provide instructions on how to install this server profile into your copy of RIM. Note that RIM must be installed in order for the profile to be added, thus the page will provide links to the installers if you have not yet installed RIM.
+
+### Uninstalling RIM
+
+Should you encounter any show-stopping problems with your installation of RIM, you may wish to perform a clean reinstall of the app. Due to the complex nature of the RIM distribution for Mac OS, simply moving the app to the trash will not uninstall it, and thus may not fully resolve your issue.
+
+RIM provides an easy method to fully uninstall itself. When you click the "About" button in the main window, you will see an uninstall button in the About screen that appears. Clicking this button will result in a confirmation dialogue, afterwhich you will be prompted for your password or touch ID in order to proceed with uninstallation. You will be given a confirmation message once the uninstallation is complete.
+</MacOS>
