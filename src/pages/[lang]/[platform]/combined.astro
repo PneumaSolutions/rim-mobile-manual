@@ -6,7 +6,7 @@ import languages from "~/i18n/languages"
 
 export async function getStaticPaths() {
   return Object.keys(languages).flatMap((lang) => {
-    return ["windows", "macos"].map((platform) => {
+    return ["ios", "android"].map((platform) => {
       return { params: { lang, platform } }
     })
   })
