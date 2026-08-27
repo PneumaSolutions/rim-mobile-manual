@@ -1,0 +1,48 @@
+﻿---
+title: Installation
+---
+
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
+
+To access the application settings for Remote Incident Manager:
+1. From either of the tabs on the main screen, activate the "Menu" button.
+1. Activate the "Settings" menu item. This will bring up the Settings screen.
+
+### Remote Accessibility
+
+The **Remote Accessibility** category contains settings pertaining to the speech output of the Remote Accessibility Module.
+
+* Speak Remote Accessibility: This toggle determines whether the output of the Remote Accessibility Module is spoken.
+    * Note that this option is not the same as toggling the Remote Accessibility Module from within a session.
+* Rate: This slider controls the rate of the speech output.
+* Pitch: This slider controls the pitch of the speech output.
+
+### Session
+
+The **Session** category contains general settings related to the application's behavior while in a session.
+
+* Keep screen awake while connected: This toggle determines whether the screen is kept awake while a session is engaged. This can come in handy for computer maintenance scenarios that involve long wait times.
+    * This option is enabled by default.
+* Sticky modifiers: With this option enabled, modifiers on the touch keyboard remain engaged until they are intentionally toggled off.
+    * This option is enabled by default.
+    * Note that this option has no bearing over the behavior of modifier keys while using a physical keyboard.
+### Custom Shortcuts
+
+The **Custom Shortcuts** screen allows you to define any custom key combination as an easily accessible shortcut for the touch keyboard. In order to add a shortcut:
+1. Activate the "Add shortcut" button to define a shortcut.
+1. Give this shortcut a name.
+1. Enable the modifiers that this shortcut will include.
+1. Activate the "Key" button to select the final key on the keyboard that will be activated by this shortcut.
+1. Activate "Save" to create the shortcut.
+
+Once the shortcut is created, it will be included in the "Shortcuts" section of the touch keyboard. The shortcut's name will be the name you assigned it during the creation process.
+
+### VoiceOver Rotor Actions
+
+The **VoiceOver rotor actions** screen will allow you to add, remove, and reorder the actions available in the VoiceOver rotor. This screen will list all of the available actions, allowing you to add any that are not currently present. Existing rotor actions, including those assigned by default, can be reordered or deleted. Activate the "Edit" button to reorder or delete the existing rotor actions.
+
+### Account
+
+The **Account** section includes a "Sign out" button. Note that any and all account management tasks are carried out via the management dashboard.  
+If you have an additional server profile installed, the "Server" button will allow you to switch which server the app communicates with.
