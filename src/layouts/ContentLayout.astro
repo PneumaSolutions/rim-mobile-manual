@@ -28,14 +28,14 @@ if (pageIndex < 0) {
 <html lang={lang}>
   <head>
   {
-    platform === "windows" ? null : (
-    <title>{data.title} - Remote Incident Manager for Android</title>
-    )
+    platform === "ios" ? (
+    <title>{data.title} - Remote Incident Manager for iOS</title>
+    ) : null
   }
   {
-    platform === "macos" ? null : (
-    <title>{data.title} - Remote Incident Manager for iOS</title>
-    )
+    platform === "android" ? (
+    <title>{data.title} - Remote Incident Manager for Android</title>
+    ) : null
   }
   
 
@@ -45,13 +45,6 @@ if (pageIndex < 0) {
   <body>
     <div>
       <h1>Remote Incident Manager (RIM)</h1>
-      <PlatformSwitcher lang={lang} platform={platform} slug={slug} />
-      <LanguageSwitcher origLang={lang} platform={platform} slug={slug} />
-      <form role="search" action={`/${lang}/${platform}/search/`} method="get">
-        <label for="q"><UIString key="search.label" /></label>
-        <input type="text" name="q" id="q" required />
-        <button type="submit"><UIString key="search.button" /></button>
-      </form>
     </div>
     <div class="container-fluid">
       <div class="sidebar">
@@ -127,8 +120,6 @@ if (pageIndex < 0) {
               </a>
             )
           }
-          <PlatformSwitcher lang={lang} platform={platform} slug={slug} />
-          <LanguageSwitcher origLang={lang} platform={platform} slug={slug} />
         </footer>
       </div>
     </div>

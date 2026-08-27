@@ -1,465 +1,268 @@
 ---
-title: Werken binnen een sessie
+title: Working within a Session
 ---
 
-import Windows from "~/components/platform/Windows.astro"
-import MacOS from "~/components/platform/MacOS.astro"
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
 
-### Wat u moet weten voordat u begint
+### Things to Know before you Begin
 
-Er gebeuren een paar dingen direct nadat de verbinding tot stand is gebracht.
+A few things will happen immediately after the connection is established.
+<IOS>
+- The remote control window for the session will appear.
+- You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
+- If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
+- A Mac target will pop up the keyboard setup assistant if this is the first time a controller has connected to it.
+    - This is for the Karabiner virtual keyboard, which listens to keyboard commands sent to it by a controller.
+    - As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.
+- Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
+    - Tap the "Session menu" button.
+    - Switch away from the app
 
+</IOS>
 
-<Windows>
-- Het venster voor de afstandsbediening van de sessie verschijnt. Dit venster kan worden verplaatst en vergroot of verkleind op één scherm, maar ook op een opstelling met meerdere monitoren.
-- U wordt geïnformeerd over de status van de actieve schermlezer, of het ontbreken daarvan, op de computer van de klant.
-- Als de klant een schermlezer gebruikt, zal een toastmelding die de gebruiker informeert dat de externe sessie is begonnen, onmiddellijk bevestigen dat de audio van het systeem van de gebruiker werkt.
-- Een Mac-doelcomputer zal de assistent voor toetsenbordinstellingen openen als dit de eerste keer is dat een controller ermee is verbonden.
-- Dit is voor het virtuele toetsenbord Karabiner, dat luistert naar toetsenbordopdrachten die door een controller worden verzonden.
-    - Daarom moet u de doelcomputer door de installatie-assistent leiden, omdat deze tijdens het identificatieproces luistert naar toetsaanslagen op het externe toetsenbord, niet naar het toetsenbord van de Mac zelf.
-- Tot slot worden alle toetsenbord- en muisinvoer onmiddellijk naar de doelcomputer gestuurd. Om de besturing terug te brengen naar uw computer, doet u een van de volgende dingen:
-    - Druk op Windows+Shift+Backspace.
-- Klik met de rechtermuisknop op de titelbalk van het RIM-venster.
-- Klik met de linkermuisknop op het RIM-pictogram in het midden van de titelbalk.
-</Windows>
+### Remote Control Zone
+<IOS>
+At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, either bring up the session menu, or switch away from the app. You will be taken back to your machine until you switch back into the app or leave the session menu. When you go back into the session window, keyboard input will once again be directed to the client computer.
+</IOS>
 
+Once you're done, either the controller or the target can go into the session menu and choose the "Disconnect Session" option. When the session ends, the target machine will get a toast notification informing them of this.
 
+### Input Methods
 
+Remote Incident Manager allows you to control a remote computer by way of a physical keyboard or an onscreen keyboard.
 
+#### Keyboard Control
 
+A physical keyboard is the most effective way to control a remote computer from your mobile device.
 
-<MacOS>
-- Het venster voor afstandsbediening van de sessie verschijnt. Dit venster kan worden verplaatst en vergroot of verkleind op één scherm, maar ook op een opstelling met meerdere monitoren.
-- U wordt geïnformeerd over de status van de actieve schermlezer, of het ontbreken daarvan, op de computer van de klant.
-- Als de klant een schermlezer gebruikt, geeft een toastmelding die de gebruiker informeert dat de externe sessie is gestart, direct bevestiging dat de systeemaudio van de gebruiker werkt.
-- Een Mac-doelcomputer zal de assistent voor toetsenbordinstellingen openen als dit de eerste keer is dat een controller hierop is aangesloten.
-- Dit is voor het virtuele toetsenbord Karabiner, dat luistert naar toetsenbordopdrachten die door een controller worden verzonden.
-- Daarom moet u de doelcomputer door de installatie-assistent leiden, omdat deze tijdens het identificatieproces luistert naar toetsaanslagen op het externe toetsenbord, en niet naar het toetsenbord van de Mac zelf.
-- Tot slot worden alle toetsenbord- en muisinvoer onmiddellijk naar de doelcomputer gestuurd. Om de besturing terug te brengen naar uw machine, doet u een van de volgende dingen:
-- Druk op Option+Shift+Backspace.
-- Klik met de rechtermuisknop op de titelbalk van het RIM-venster.
-- Klik met de linkermuisknop op het RIM-pictogram in het midden van de titelbalk.
-
-
-</MacOS>
-
-
-### Zone voor afstandsbediening
-
-
-<Windows>
-Nu bent u helemaal klaar om alle taken uit te voeren die aan de clientzijde moeten worden uitgevoerd. Als u weer de controle over uw eigen computer wilt overnemen, opent u het RIM-menu en selecteert u de optie &quot;Sessie minimaliseren&quot;. U keert terug naar uw eigen computer totdat u weer naar het sessievenster overschakelt of opnieuw op Windows+Shift+Backspace drukt. Wanneer u teruggaat naar het sessievenster, worden toetsenbord- en muisinvoer weer naar de clientcomputer gestuurd.
-
-</Windows>
-
-
+<IOS>
+Remote Incident Manager does not require that any specific changes be made with in iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
+- Notes for VoiceOver users:
+    - At a minimum, it is crucial to disable all forms of Quick Nav. With Quick Nav on, arrow keys will not reach the target machine.
+    - Ensure that your VoiceOver modifier key is not set to caps lock. Screen reader commands will not be sent to the target computer if there is a modifier conflict.
+    - If you need to use a key command that will unavoidably conflict with VoiceOver, we recommend temporarily disabling VoiceOver in order to execute that command.
+- Depending on the make and model of your keyboard, certain keys may perform iOS-specific functions that may prevent their use within Remote Incident Manager. Consult the manual that came with your keyboard for further information concerning this should you encounter issues.
 
-<MacOS>
+If VoiceOver is on and a keyboard is connected, a warning screen will appear advising  you of the usage limitations. You may disable this screen from appearing in the future should you not wish to be advised of this.
 
-Nu bent u klaar om alle taken uit te voeren die aan de clientzijde moeten worden uitgevoerd. Als u weer terug wilt naar uw eigen computer, opent u het RIM-menu en selecteert u de optie &#x27;Sessie minimaliseren&#x27;. U keert dan terug naar uw eigen computer totdat u weer teruggaat naar het sessievenster of opnieuw op Option+Shift+Backspace drukt. Wanneer u teruggaat naar het sessievenster, worden toetsenbord- en muisinvoer opnieuw naar de clientcomputer gestuurd.
-</MacOS>
+</IOS>
 
+#### Onscreen Control
 
+In the absence of a keyboard, Remote Incident Manager has accessible methods for performing basic functions entirely via the screen.
 
-Zodra u klaar bent, kan de controller of het doel naar het RIM-menu gaan en de optie &quot;Verbinding verbreken&quot; kiezen. Wanneer de sessie wordt beëindigd, krijgt de doelmachine een toastmelding die hen hiervan op de hoogte stelt.
+##### Touch Keyboard
 
-
-## Het RIM-menu
-
-Zoals eerder vermeld, keert u terug naar uw computer wanneer u het RIM-menu opent. Dit menu bevat een aantal opties. Deze zijn onder andere:  
-
-
-<Windows>
-- Update RIM op doelcomputer: dwingt een update van RIM op de doelcomputer af
-- Deze optie wordt weergegeven als de doelcomputer een oudere versie van RIM gebruikt.
-- RIM opnieuw installeren als beheerder op doelcomputer: deze optie probeert RIM opnieuw te installeren als beheerder op een Windows-doelcomputer, waarbij de doelgebruiker zelf en/of met hulp van de IT-afdeling van zijn bedrijf de aanvraag voor beheerdersrechten moet accepteren.
-- Sessie minimaliseren (**Windows+Shift+M**): brengt de controle terug naar uw computer, zoals hierboven beschreven.
-- Chat openen: opent de tekstchat voor een bepaalde sessie.
-    - Merk op dat deze optie ook in het sessiemenu aan de doelzijde verschijnt.
-- Bestand naar doel overbrengen: verschijnt als er een bestand op het klembord staat.
-- Hoewel deze alternatieve methode voor het voltooien van een bestandsoverdracht altijd beschikbaar is, is deze alleen nodig voor het overbrengen van bestanden naar Mac-doelen.
-- Sessie omdraaien (**Windows+Shift+F**): Hiermee kan uw client uw computer op afstand bedienen en het geluid ervan horen. Als oorspronkelijke controller kunt u de sessie terugdraaien door deze optie een tweede keer te selecteren.
-- Start/stop spraakgesprek: Hiermee kunt u de spraakchat voor uw sessie in- of uitschakelen.
-- Tijdens een onbeheerde sessie verschijnt bij deze optie een dialoogvenster voor machtigingen waarop de gebruiker aanwezig moet zijn om te reageren. Bij geprompteerde sessies worden spraakgesprekken echter nog steeds gestart wanneer de controller deze activeert.
-- Sessie-opname starten: begint met het opnemen van de inhoud van de actieve sessie - hierover later meer.
-    - Wanneer de sessie-opname is ingeschakeld, wordt deze optie vervangen door het volgende:
-        - Sessie-opname pauzeren/hervatten (schakelaar)
-        - Sessie-opname stoppen: beëindigt en slaat de opname op.
-- Externe toegankelijkheid starten: deze optie verschijnt wanneer er geen schermlezer actief is op de externe computer. Hierdoor wordt spraak aan uw kant ingeschakeld, maar hoeft de klant zich geen zorgen te maken over het horen van spraak.
-- Als er een schermlezer (inclusief Remote Accessibility) actief is, verandert deze optie in een geforceerde afsluiting van de actieve schermlezer. Dit is handig wanneer de schermlezer van een doelwit niet meer reageert, zodat u deze niet meer normaal kunt herstarten.
-- Audio-uitvoer van doelwit dempen: hiermee kunt u de audio-uitvoer van het systeem van de externe computer dempen.
-- Houd er rekening mee dat een lopend spraakgesprek actief blijft terwijl deze instelling van kracht is, zodat u met de persoon met wie u bent verbonden kunt praten terwijl u de audio van hun systeem niet kunt horen.
-- Opnieuw opstarten en opnieuw verbinden: hiermee kunt u de computer opnieuw opstarten en de sessie automatisch opnieuw verbinden.
-    - Houd er rekening mee dat een Mac-doelcomputer RIM niet vóór het inloggen kan starten vanwege platformbeperkingen, met name FileVault.
-- Daarom maakt RIM opnieuw verbinding zodra de gebruiker zich aanmeldt.
-- Control+Alt+Delete verzenden: hiermee verzendt u deze toetscombinatie naar de externe computer.
-- Een equivalent voor deze optie is nog niet geïmplementeerd voor Mac-doelcomputers.
-- Onbeheerde of gevraagde toegang aanvragen: hiermee kunt u een verzoek om onbeheerde toegang tot de clientcomputer verzenden. Dit is handig als u een systeembeheerder bent en routineonderhoud moet uitvoeren, of zelfs voor iets eenvoudigs als het bedienen van uw thuiscomputer terwijl u onderweg bent.
-- Doelcomputer vergrendelen: vergrendelt de doelcomputer.
-- Verbindingsdetails bekijken: geeft gedetailleerde informatie over uw verbinding en de doelcomputer. De informatie omvat:
-- Verbindingsstatistieken
-- Informatie over de computer, waaronder de versie van het besturingssysteem, het beschikbare RAM-geheugen, enz.
-- Actieve processen
-- Geïnstalleerde pakketten
-- AI-tools: hiermee kunt u chatten met een aantal chatbots die zijn gericht op toegankelijkheid.
-    - Deze optie is alleen beschikbaar voor controllers die een pro-pas hebben of een persoonlijk community-, weekendondersteunings- of pro/enterprise-abonnement hebben.
-- Sessie verbreken (**Windows+Shift+D**): Beëindigt de sessie.
-- Houd er rekening mee dat deze optie beschikbaar is voor beide partijen in de sessie.
-
-
-</Windows>
-  
-
-
-<MacOS>
-
-- RIM op doel bijwerken: dwingt een update van RIM op de doelcomputer af.
-- Deze optie wordt weergegeven als de machine van het doel een oudere versie van RIM uitvoert.
-- RIM opnieuw installeren als beheerder op doel: deze optie probeert RIM opnieuw te installeren als beheerder op een Windows-doel, waarbij de doelgebruiker zelf en/of met hulp van de IT-afdeling van zijn bedrijf het verzoek om beheerdersrechten moet accepteren.
-- Sessie minimaliseren (**Option+Shift+M**): brengt de controle terug naar uw computer, zoals hierboven beschreven.
-- Chat openen: opent de tekstchat voor een bepaalde sessie.
-- Merk op dat deze optie ook in het sessiemenu aan de doelzijde verschijnt.
-- Bestand naar doel overbrengen: verschijnt als er een bestand op het klembord staat.
-- Hoewel deze alternatieve methode voor het voltooien van een bestandsoverdracht altijd beschikbaar is, is deze alleen nodig voor het overbrengen van bestanden naar Mac-doelen.
-- Sessie omdraaien (**Option+Shift+F**): hiermee kan uw client uw computer op afstand bedienen en het geluid ervan horen. Als oorspronkelijke controller kunt u de sessie terugdraaien door deze optie een tweede keer te selecteren.
-- Start/stop spraakgesprek: hiermee kunt u de spraakchat voor uw sessie in- of uitschakelen.
-- Tijdens een onbeheerde sessie verschijnt bij deze optie een dialoogvenster voor machtigingen waarop de gebruiker aanwezig moet zijn om te reageren. Bij geprompteerde sessies worden spraakgesprekken echter nog steeds gestart wanneer de controller deze activeert.
-- Sessie-opname starten: begint met het opnemen van de inhoud van de actieve sessie - hierover later meer.
-    - Wanneer de sessie-opname is ingeschakeld, wordt deze optie vervangen door het volgende:
-        - Sessie-opname pauzeren/hervatten (schakelaar)
-        - Sessie-opname stoppen: beëindigt en slaat de opname op.
-- Remote Accessibility starten: deze optie verschijnt wanneer er geen schermlezer actief is op de externe computer. Hierdoor wordt spraak aan uw kant ingeschakeld, maar hoeft de klant zich geen zorgen te maken over het horen van spraak.
-- Als er een schermlezer (inclusief Remote Accessibility) actief is, verandert deze optie in een geforceerde afsluiting van de actieve schermlezer. Dit is handig wanneer de schermlezer van een doelwit niet meer reageert, zodat u deze niet meer normaal kunt herstarten.
-- Audio-uitvoer van doelwit dempen: hiermee kunt u de audio-uitvoer van het systeem van de externe computer dempen.
-- Houd er rekening mee dat een lopend spraakgesprek actief blijft terwijl deze instelling van kracht is, zodat u kunt praten met de persoon waarmee u bent verbonden terwijl u de audio van hun systeem niet kunt horen.
-- Opnieuw opstarten en opnieuw verbinden: hiermee kunt u de computer opnieuw opstarten en de sessie automatisch opnieuw verbinden.
-    - Houd er rekening mee dat een Mac-doelcomputer RIM niet vóór het inloggen kan starten vanwege platformbeperkingen, met name FileVault.
-- Daarom maakt RIM op een Mac-doelcomputer opnieuw verbinding zodra de gebruiker zich aanmeldt.
-- Control+Alt+Delete verzenden: hiermee verzendt u deze toetscombinatie naar de externe computer.
-    - Een equivalent voor deze optie is nog niet geïmplementeerd voor Mac-doelcomputers.
-- Onbeheerde of gevraagde toegang aanvragen: hiermee kunt u een verzoek om onbeheerde toegang tot de clientcomputer verzenden. Dit is handig als u een systeembeheerder bent en routineonderhoud moet uitvoeren, of zelfs voor iets eenvoudigs als het bedienen van uw thuiscomputer terwijl u onderweg bent.
-- De doelcomputer vergrendelen: vergrendelt de doelcomputer.
-- Verbindingsdetails bekijken: geeft gedetailleerde informatie over uw verbinding en de doelcomputer. De informatie omvat:
-- Verbindingsstatistieken
-- Informatie over de computer, waaronder de versie van het besturingssysteem, het beschikbare RAM-geheugen, enz.
-- Actieve processen
-- Geïnstalleerde pakketten
-- AI-tools: hiermee kunt u chatten met een aantal chatbots die zijn afgestemd op toegankelijkheid.
-    - Deze optie is alleen beschikbaar voor controllers die een pro-pas hebben of een persoonlijk community-, weekendondersteunings- of pro/enterprise-abonnement hebben.
-- Sessie verbreken (**Option+Shift+D**): Beëindigt de sessie.
-- Houd er rekening mee dat deze optie beschikbaar is voor beide partijen in de sessie.
-
-
-</MacOS>
-
-
-### Sessiechat
-
-Tekstcommunicatie via de ingebouwde sessiechatfunctie van RIM kan een handige optie zijn in situaties waarin een spraakgesprek niet mogelijk of praktisch is. Het kan zelfs worden gebruikt als aanvulling op een bestaand spraakgesprek, bijvoorbeeld om links, instructies en dergelijke te versturen.  
-
-#### Een chat starten    
-Een sessiechat kan op een van de volgende manieren worden gestart:  
-* Aan de kant van de controller    
-    * Een controller kan de optie &quot;Chat openen&quot; selecteren in het sessiemenu.    
-    * Wanneer het chatvenster op de controlerende computer verschijnt, komt de focus in het bewerkingsvak terecht, waar een bericht kan worden getypt en verzonden met de enter-toets.
-    * Een bericht dat naar de doelgebruiker wordt verzonden, activeert een chatvenster op zijn computer. Op dat moment is een chatgesprek mogelijk.
-* Houd er rekening mee dat het niet mogelijk is om de doelcomputer te bedienen terwijl het chatvenster van de gebruiker actief is. De bediening van de doelcomputer wordt hervat als aan een van de volgende voorwaarden is voldaan:
-        * De doelgebruiker verplaatst de focus weg van het chatvenster, in welk geval de controle kan worden hervat totdat hij de focus weer naar het chatvenster verplaatst.
-* De doelgebruiker sluit het chatvenster door op Escape te drukken.
-* Als het chatvenster op de controlerende computer is gesloten en er 30 seconden zijn verstreken, wordt het chatvenster van de doelgebruiker automatisch uitgeschakeld, waarna de controle wordt hervat.
-* Doelzijde:
-    * De doelgebruiker kan de optie &#x27;Chat openen&#x27; selecteren in het sessiemenu. Hierdoor wordt onmiddellijk een chatvenster op de controlerende computer geactiveerd.
-* Op dit moment is heen-en-weer-chatten mogelijk.
-* Als de doelgebruiker het chatvenster aan zijn kant sluit, blijft het chatvenster op de controlerende computer open. Een volgend bericht van de controller zal het chatvenster op de doelcomputer weer activeren.
-
-#### Werken binnen een chat
-Terwijl het chatvenster actief is, worden berichten zowel in spraak als in braille weergegeven zodra ze binnenkomen. Een machine waarop het chatvenster niet actief is, wordt via standaard Windows-toastmeldingen op de hoogte gebracht van chatberichten.  
-Buiten het berichtvenster kan de chat worden genavigeerd als een standaardwebpagina. Berichten die zijn verzonden door de partij tegenover degene die het bericht bekijkt, kunnen naar het klembord worden gekopieerd via de knop &quot;Kopiëren&quot; naast het betreffende bericht naar het klembord worden gekopieerd.  
+The touch keyboard can be enabled or disabled through the session menu. The touch keyboard presents a wide variety of modifier keys, function keys, and general operating system functions. Modifier keys are sticky, meaning that activating  one will toggle its state rather than sending a single key press.  
+The various operating system shortcuts will depend on the operating system of the target computer to which you are connected. For example, an Alt+F4 shortcut will present itself during a session with a Windows target, whereas a session with a macOS target will present a Command+Q shortcut.
 
-#### Chat-transcripties  
+<IOS>
 
-Chat-transcripties worden opgeslagen in een door de gebruiker configureerbare map. Standaard is dit de map &quot;documenten/Remote Incident Manager/Chat&quot; in uw gebruikersmap.  
+##### VoiceOver Gestures
 
-Momenteel is de enige manier om de map te wijzigen via een configuratiebestand, waardoor de procedure alleen in het Engels beschikbaar is.  
+Remote Incident Manager can control the target computer via VoiceOver gestures. These gestures can be customized to suit your needs.
 
+</IOS>
 
-<Windows>
+##### Sending Text to the Target
 
-Het configuratiebestand kan worden geopend via het dialoogvenster &quot;Uitvoeren&quot; door het volgende te plakken:    
-%appdata%\remote-incident-manager\config.toml
-</Windows>
-  
-  
-  
+If you need to type a large string of text to the target computer, activate the "Send Text to Target" option off the session menu. This will present a text field wherein you can type your text, then dismiss the field to send it to the target computer.
 
-<MacOS>
-Het bestand config.toml bevindt zich in $HOME/Library/Application Support/remote-incident-manager
+##### Mouse Control
 
-</MacOS>
+<IOS>
 
-Zoek in het configuratiebestand de regel <span translate="no">directory</span> onder de regel <span translate="no">Chat</span> en wijzig de map naar een map naar keuze.  
-Houd er rekening mee dat backslashes correct moeten worden geëscape in het geval van Windows-mappen.  
-Zodra u de configuratie opslaat, worden de wijzigingen van kracht voor volgende sessies. U hoeft de toepassing niet opnieuw te starten.
+While VoiceOver is off, the middle portion of the remote session screen will act as a mouse or trackpad.
 
+</IOS>
 
 
-### Bestandsoverdracht
+### The RIM Menu
 
-RIM biedt een eenvoudige manier om bestanden over te dragen, ongeacht het gebruikte platform.
-1. Open het RIM-menu en klik op &quot;Sessie minimaliseren&quot;. De controle wordt teruggegeven aan uw computer.
-1. Selecteer de bestanden en/of mappen die u wilt overzetten met behulp van uw bestandsbeheerder.  
-1. Kopieer de geselecteerde inhoud op de gebruikelijke manier naar het klembord. U ontvangt een melding dat een bestand klaar is om te worden overgezet. U hebt twee opties.  
-1. **Als het doel een Mac is:**  
-- Activeer het RIM-sessiemenu en klik op de optie &quot;Bestand naar doel overzetten&quot;.
-    - Na voltooiing van de overdracht genereert de doel-Mac een tijdelijke map met de overgedragen inhoud. Deze moet vervolgens worden gekopieerd en geplakt in de beoogde mappen.
-1. **Als het doel een Windows-computer is:**
-- Schakel terug naar de externe sessie en zoek de map op de doelcomputer waar u de inhoud wilt plakken.
-- Plak ten slotte zoals u dat normaal zou doen.
+As mentioned earlier, accessing the RIM menu directs you back to your mobile device. There are a number of options in this menu. They include:  
+<IOS>
+- Show Touch Keyboard: This toggle controls whether the touch keyboard and gesture-based control are enabled.
+- Send Text to Target: This option allows you to type a string of text to the target using your preferred screen-based input method.
+- Gesture Actions: This option opens the gesture customization screen.
+- Open Chat: Opens the text chat for a given session
+    - Note that this option additionally appears in the target-side session menu.
+- Transfer File from Target: Allows you to receive a file from the target computer.
+    - Note that this option will only appear if a file is on the target machine's clipboard.
+- Transfer Files to Target: Allows you to send a file from your device to the target computer.
+- Send Clipboard to Target: Sends the text on your device's clipboard to the target computer's clipboard.
+- Receive Clipboard from Target: Sends the text on the target machine's clipboard to your device's clipboard.
+- Start/stop Voice Conversation: Allows you to toggle the voice conversation during the session.
+    - During an unattended session, this option will present a permissions dialogue to the target computer that the user must be present to respond to. However, prompted sessions still initiate voice conversations upon activation by the controller.
+- Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the end user will not need to worry about hearing speech.
+    - If a screen reader (including Remote Accessibility) is running, this option turns into a force quit for the running screen reader. This is useful when a target's screen reader stops responding to the extent you are unable to restart it normally.
+- Mute Target Audio Output: Allows you to silence the system audio output of the remote computer.
+    - Note that a running voice conversation will remain active while this setting is in effect, allowing you to talk with the person you are connected to while their system audio is inaudible to you.
+- Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
+    - Note that a Mac target cannot start RIM pre-login due to platform limitations, notably FileVault.
+    - As such, RIM will reconnect once the user logs in.
+- Send Control+Alt+Delete: Sends this keystroke to the remote machine.
+    - An equivalent for this option is not yet implemented for Mac targets.
+- Request Unattended or Prompted Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
+- Lock the Target Machine: Locks the target machine.
+- Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
+    - Connection statistics
+    - Information about the computer, including operating system version, available RAM, etc.
+    - Running processes
+    - Installed packages
+- Disconnect Session: Terminates the session.
+    - Remember that this option is available to both sides of the session.
 
-Houd er rekening mee dat de overdrachtstijd volledig afhankelijk is van de grootte van de verzonden inhoud en uw netwerksnelheid.
+</IOS>  
 
-### Sessie opnemen
 
-Met de functie voor sessie-opname van RIM kunt u als beheerder de inhoud van uw sessie gemakkelijk opnemen in een bestand op uw computer. Dit bestand kan vervolgens worden verspreid onder de personen aan wie u ondersteuning op afstand biedt. De inhoud van de sessieopname omvat de audiovisuele uitvoer van de doelcomputer en het geluid van een lopend spraakgesprek.
-Om een sessieopname te vergemakkelijken:  
+### Session Chat
 
+Text communication via RIM's built-in session chat capability can be a useful option in situations where a voice conversation isn't possible or practical. It can even be used to supplement an existing voice conversation, I.E. to send links, instructions, or the like.  
 
-<Windows>
-1. Open de optie &quot;Start sessieopname&quot; in het sessiemenu. Dit heeft de volgende gevolgen:
-* Tijdens een trefwoordsessie:
-* De doelgebruiker krijgt een dialoogvenster met toestemming waarin wordt gevraagd of hij/zij akkoord gaat met het opnemen van de sessie. De toetsenbordinvoer van de controller wordt opgeschort terwijl dit dialoogvenster wordt weergegeven.
-* Als de doelgebruiker akkoord gaat, begint de opname. Als de doelgebruiker de opname weigert, wordt de hele sessie beëindigd.
-* Voor geprompte/onbeheerde sessies:
-* De opname begint onmiddellijk.
-* Hoe dan ook, beide partijen ontvangen een melding dat de opname is gestart zodra de opname daadwerkelijk begint.
-1. Om de opname te pauzeren of te hervatten, gaat u naar de schakelaar &quot;Pauzeren/hervatten van sessie-opname&quot; in het sessiemenu.
-* De opname wordt dienovereenkomstig gepauzeerd of hervat.
-* Beide partijen ontvangen hierover een melding.
-1. De opname kan worden gestopt via de optie &quot;Stop sessie-opname&quot; in het sessiemenu.
-* Standaard krijgt u een bevestigingsdialoogvenster te zien waarin u wordt gevraagd of u de opname wilt stoppen. Dit dialoogvenster is bedoeld om onbedoelde deactivering van de sessie-opname te voorkomen, maar kan desgewenst worden uitgeschakeld.
-* Beide partijen ontvangen een melding nadat de opname is voltooid.
-    * De opname wordt vervolgens opgeslagen in de map waarin RIM is geconfigureerd om uw opnames op te slaan (dit is standaard de map &quot;Video&#x27;s&quot; in uw gebruikersmap). Voor extra gemak wordt u automatisch naar deze map geleid via Verkenner, zodat u de opname desgewenst naar de gebruiker kunt sturen.
-* Houd er rekening mee dat het verbreken van de verbinding de opname automatisch stopt.
+#### Starting a Chat
 
+A session chat can be initiated in one of the following ways:  
+* Controller-side
+    * A controller can select the "Open Chat" option off the session menu.
+    * When the chat window appears on the controlling device, focus lands in the edit box wherein a message can be typed and sent using the enter key.
+    * A message sent to the target user will trigger a chat window on their machine. At this point, back-and-forth chat is now possible.
+    * Note that it is not possible to control the target computer while the user's chat window is in focus. Control of the target will resume if any of the following conditions are met:
+        * The target user shifts focus away from the chat window, in which case control may resume until they shift focus back to the chat window.
+        * The target user closes the chat window by pressing escape.
+        * If the chat window on the controlling computer is closed and 30 seconds have passed, the target user's chat window will automatically disengage, at which point control resumes.
+* Target-side:
+    * The target user can select the "Open Chat" option off the session menu. Doing so will immediately trigger a chat window on the controlling computer.
+    * At this point, back-and-forth chat is now possible.
+    * If the target user closes the chat window on their side, the chat window will remain open on the controlling computer. A subsequent message from the controller will revive the chat window on the target computer.
 
-</Windows>
+#### Working within a Chat
 
+While the chat window is in focus, messages will be presented in both speech and Braille as they arrive. A machine that does not have the chat window in focus will be alerted of chat messages through standard toast notifications.  
+While outside the message box, the chat can be navigated like a standard webpage. Messages sent by the party opposite from the one viewing the message can be copied to the clipboard via the "Copy" button adjacent to the message in question.
 
+### File Transfers
 
-<MacOS>
+RIM provides a simple avenue for transferring files, irrespective of the platform used.
 
-1. Ga naar de optie &#x27;Sessieopname starten&#x27; in het sessiemenu. Dit heeft de volgende gevolgen:
-* Tijdens een trefwoordsessie:
-* De doelgebruiker krijgt een dialoogvenster met toestemming gevraagd waarin wordt gevraagd of hij/zij toestemming wil geven voor het opnemen van de sessie. De toetsenbordinvoer van de controller wordt opgeschort terwijl dit dialoogvenster wordt weergegeven.
-        * Als de doelgebruiker akkoord gaat, begint de opname. Als de doelgebruiker de opname weigert, wordt de hele sessie beëindigd.
-* Voor geprompte/onbemande sessies:
-* De opname begint onmiddellijk.
-* Hoe dan ook, beide partijen ontvangen een melding dat de opname is gestart zodra de opname daadwerkelijk begint.
-1. Om de opname te pauzeren of te hervatten, gaat u naar de schakelaar &quot;Pauzeren/hervatten van sessie-opname&quot; in het sessiemenu.
-* De opname wordt dienovereenkomstig gepauzeerd of hervat.
-* Beide partijen ontvangen een melding hierover.
-1. De opname kan worden gestopt via de optie &#x27;Stop sessie-opname&#x27; in het sessiemenu.
-* Standaard ontvangt u een bevestigingsvenster met de vraag of u de opname wilt stoppen. Dit venster is bedoeld om onbedoelde deactivering van de sessie-opname te voorkomen, maar kan desgewenst worden uitgeschakeld.
-* Beide partijen ontvangen een melding nadat de opname is voltooid.
-    * De opname wordt vervolgens opgeslagen in de map waarin RIM uw opnames opslaat (standaard is dit de map &quot;Movies&quot; in uw gebruikersmap). Voor extra gemak wordt u automatisch naar deze map geleid via Finder, zodat u de opname desgewenst naar de gebruiker kunt sturen.
-* Houd er rekening mee dat het verbreken van de verbinding de opname automatisch stopt.
+#### Sending Files to a Target
 
+1. Bring up the session menu, then activate "Transfer Files to Target".
+1. Select the file(s) and/or folder(s) you want to transfer using your file manager.
+1. The file transfer will begin once you have completed your file selection by pressing the "Open" button. Note that the transfer time will depend entirely on the size of the content being sent as well as your network speed.
 
-</MacOS>
+#### Receiving Files from a Target
 
+When a file is copied to the clipboard on the target computer, your mobile device will issue a notification that a file is ready to be transferred. Activate the "Transfer File from Target" option off the session menu in order to receive the file. The file will be stored in your device's Downloads folder by default.
 
+### Remote Accessibility Module
 
-Opnames zijn een volledig gratis functie, beschikbaar voor alle gebruikers op elk niveau. Bovendien worden opnames volledig lokaal verwerkt, zonder enige betrokkenheid van de cloudservice.
+Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The Remote Accessibility Module will allow you to independently use a computer that is not currently running a screen reader. You will hear the target computer as if a screen reader were present, while avoiding the need to run an actual screen reader on the target computer.  
+If your device is running VoiceOver while initiating a session with a remote computer that is not presently running a screen reader, the Remote Accessibility Module will automatically engage when the connection is established. Alternatively, you may enable the Remote Accessibility Module manually by activating the "Start Remote Accessibility" option off the session menu.
 
-#### Opmerking over de module voor externe toegankelijkheid
+## Rebooting and Reconnecting
 
-Aangezien de module voor externe toegankelijkheid de spraak uitvoert naar uw actieve exemplaar van NVDA, moet RIM hier rekening mee houden om deze spraak op een opname vast te leggen. Daarom start RIM, wanneer externe toegankelijkheid actief is tijdens een opname, een opname van de volledige audio-uitvoer van uw systeem. Hierdoor kan de spraak die via de module voor externe toegankelijkheid wordt gehoord, precies zo worden vastgelegd als deze tijdens de sessie werd gehoord. Hoewel dit ertoe kan leiden dat sommige meldingsgeluiden van uw besturingscomputer in de opname worden vastgelegd, zorgt dit er niet voor dat het geluid van de doelcomputer wordt verdubbeld.
+Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
+Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once the user logs in. This is due to the fact that RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.
 
-#### Opmerking voor gebruik binnen ondernemingen
+### Unattended or Prompted Access
 
-Om aan te sluiten bij de gebruikelijke beveiligingsmaatregelen binnen ondernemingen, is sessie-opname een functie die binnen bedrijfsconfiguraties alleen op uitdrukkelijk verzoek kan worden ingeschakeld. Tenzij de opnamefunctie is ingeschakeld door een beheerder van de organisatie, zijn alle opnamemechanismen dus niet beschikbaar voor RIM-controllers binnen de organisatie.
+RIM allows you, as the controller, to configure machines for unattended or prompted access. This allows you to provide remote assistance without the user having to launch RIM, enter a keyword, or even be near the computer. This is useful if you are a sysadmin performing routine maintenance on computers in your workgroup, or for clients you provide support to on the regular. You may also want to allow unattended access for your home computer should you need to access it from someplace else.  
+There are a few ways to configure machines for unattended access.
 
-#### Geavanceerde configuratie voor sessie-opnames
+#### During an Interactive Session
 
-RIM biedt een aantal geavanceerde configuratieopties voor sessie-opnames. Deze omvatten de mogelijkheid om opnames automatisch te starten bij het begin van een sessie, opnames op te slaan in een alternatief pad (bijv. een netwerkshare) en de status van het bevestigingsvenster te bepalen bij het stoppen van een opname. Momenteel is de enige manier om deze instellingen te wijzigen via een configuratiebestand, waardoor de procedure alleen beschikbaar is in het Engels.  
+1. Bring up the session menu.
+1. Select "Request Unattended or Prompted Access."
+1. You will be asked what kind of connection you want to configure. Your options are:
+    1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.
+    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine. They will need to press Windows+Shift+Y on Windows, or Option+Shift+Y on macOS, should they wish to accept the connection.
+1. You will be asked to give this machine a name. Enter a personal name for the machine, or if applicable, the machine ID as it appears in your workgroup.
+1. Press enter.
+1. On the client machine, a dialogue pops up asking the user if they agree to their computer being set up for the access you requested. If they answer yes, then you will get a prompt informing you that the access has been approved.  
 
+##### Note for Personal Unattended Account Holders
 
+If you have used all the machine slots allocated to your account, RIM will not perform the request. In this situation, you have two options, both possible via the RIM Dashboard:
+1. Deregister one of your machines, freeing up a slot.
+1. Upgrade your subscription with more slots.
 
-<Windows>
-Het configuratiebestand is toegankelijk via het dialoogvenster Uitvoeren door het volgende te plakken:  
-%appdata%\remote-incident-manager\config.toml
-</Windows>
-  
-  
-  
+#### Registering a Machine to your RIM account
 
-<MacOS>
-Het bestand config.toml bevindt zich in $HOME/Library/Application Support/remote-incident-manager
-</MacOS>
-  
-  
-Zodra u in het configuratiebestand bent, zijn de volgende opties beschikbaar:  
-*<span translate="no">directory</span> (Opname starten bij begin van sessie): Stelt de map in voor het opslaan van opnames.
-	* Backslashes moeten correct worden geëscape in het geval van Windows-mappen.  
-* <span translate="no">auto_start</span>:  Bepaalt of de sessie-opname onmiddellijk start bij het begin van de sessie. Dit is standaard ingesteld op <span translate="no">false</span>.  
-* <span translate="no">suppress_stop_confirmation</span>: Bepaalt of het bevestigingsvenster wordt weergegeven wanneer een opname handmatig wordt gestopt. De standaardinstelling is <span translate="no">false</span>.
-* Houd er rekening mee dat het verbreken van een sessie altijd de opname stopt zonder bevestiging, ongeacht deze instelling.
+Should you wish to register one of your own machines for unattended access, you can do so without having to start an interactive session with the machine. 
+1. Start RIM in Receive Help Mode.
+1. Click on the "Add this machine to your RIM account" button.
+1. Enter your email, then click next.
+1. Wait for the two-factor login code to arrive, enter it, then you should be logged in.
+1. You will be asked what type of access you would like configured for this machine. Your options are:
+    1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user. This option is useful for configuring access to your home computer while on the go.
+    1. Prompted: This configuration presents the user with a prompt informing them that you are conecting to their machine.
+1. Give the machine a name, then activate the "Add Machine" button.
+1. The machine will be registered to your account, which will allow any controller machines logged into your RIM account to connect to this machine.
 
-Zodra u de configuratie opslaat, worden de wijzigingen van kracht voor volgende sessies. U hoeft de toepassing niet opnieuw te starten.
+##### Note for Personal Unattended Account Holders
 
+If you have used all the machine slots allocated to your account, RIM will not perform the request. In this situation, you have two options, both possible via the RIM Dashboard:
+1. Deregister one of your machines, freeing up a slot.
+1. Upgrade your subscription with more slots.
 
-### Module voor externe toegankelijkheid
+#### Connecting to a Preconfigured Target
 
-Of u nu een gebruiker helpt die geen schermlezer gebruikt, of een probleem met een defecte schermlezer diagnosticeert, RIM staat volledig voor u klaar om u te helpen.
+Now that we've registered the machine for unattended access, here is how we will start a session.
+1. Start Remote Incident Manager.
+1. Rather than entering a keyword, locate and activate the "My machines" tab.
+1. When you activate this tab, a list of machines will appear. Simply choose the one you want, then activate it. You may also use the search bar to narrow the list down to a specific machine.
 
-<Windows>
+If the target machine is configured for prompted access, the end user will get a prompt. Once they answer yes, you'll be connected. If the session is unattended, you will immediately be connected and dropped into the remote control zone.
 
-De module voor toegang op afstand bestaat uit twee componenten:
-- Een add-on voor de NVDA-schermlezer waarmee de schermlezer uitvoer van de externe computer kan ontvangen
-- Een zelfstandige toegankelijkheidsmodule die op verzoek van de controller op de doelcomputer wordt gestart. Het voordeel van deze aanpak is dat de eindgebruiker geen spraak op zijn computer hoort terwijl u deze bestuurt. In plaats daarvan stuurt de module voor toegang op afstand de spraakuitvoer door naar de actieve versie van NVDA aan de kant van de controller. Op deze manier kunt u een eindgebruiker op een toegankelijke manier helpen zonder dat deze een schermlezer hoeft te installeren of zelfs maar te downloaden.
+Please note: Voice conversations require the target user to approve them during fully unattended sessions. This additional approval step is  not required for prompted sessions.
 
-### Installatieprocedure
-Voor de eerste initialisatie van de toegankelijkheidsmodule moet u het volgende doen:
-1. Maak verbinding met een computer waarop geen schermlezer draait.
-1. Als NVDA momenteel actief is, wordt u gevraagd om een add-on te installeren waarmee uw exemplaar van NVDA tijdens de sessie met de externe computer kan communiceren. Accepteer de installatieprompts en wacht tot NVDA opnieuw is opgestart.
-1. Nu is de module voor externe toegankelijkheid volledig geïnitialiseerd en hoort u spraakuitvoer terwijl u de externe computer bedient. Om de spraakuitvoer tijdelijk te dempen, drukt u eenmaal op Insert of Capslock+S om deze uit te schakelen en vervolgens tweemaal op die opdracht om deze weer in te schakelen.
+#### Revoking Unattended Access
 
-Vanaf dit moment zal, als u een schermlezer op de bedienende computer gebruikt, de module voor externe toegankelijkheid automatisch starten tijdens externe sessies waarbij op de externe computer geen schermlezer actief is. Als u een andere schermlezer dan NVDA gebruikt, zal RIM die schermlezer uitschakelen en u overschakelen naar NVDA. Als u de module voor externe toegankelijkheid op de externe machine moet stoppen om een andere schermlezer te starten, gaat u gewoon naar de optie &quot;Stop Remote Accessibility&quot; in het RIM-menu.  
+If you no longer want your machine to be controlled unattended, you can revoke the controller's access. You do not need to be in a session in order to do this.
 
-</Windows>
+##### Windows Method
 
+1. Access the Remote Incident Manager icon in your system tray.
+    1. If using the keyboard, press windows+b, then space, then left or right arrow until you find the icon.
+1. Right click this icon, or press the applications or shift+f10 key.
+1. Select the "Revoke Unattended Access" option.
+1. You will arrive at a list of computers, select the one you want to revoke.
+1. You will be asked if you wish to revoke the machine; answer yes.  
 
-<MacOS>
+That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.
 
-De module voor externe toegankelijkheid is een speciale configuratie die op verzoek van een Windows- of Mac-controller op de doel-Mac wordt gestart. Het voordeel van deze aanpak is dat de eindgebruiker geen spraak op zijn computer hoort terwijl u deze bestuurt. In plaats daarvan stuurt de module voor externe toegankelijkheid de spraakuitvoer door naar het spraaksysteem aan de kant van de controller. Op deze manier kunt u een eindgebruiker op een toegankelijke manier helpen zonder dat deze een schermlezer hoeft in te schakelen. Als u VoiceOver op de besturende Mac gebruikt, wordt de module voor externe toegankelijkheid automatisch gestart tijdens externe sessies waarbij de externe computer geen schermlezer heeft.
-</MacOS>
-  
+##### macOS Method
 
-## Opnieuw opstarten en opnieuw verbinden
+1. Access the Remote Incident Manager icon in your menu extras/status menus.
+    1. If using VoiceOver, press VO+M twice, then locate the Remote Incident Manager menu icon.
+    1. Click this icon, or press VO+Space.  
+1. Select the "Revoke Unattended Access" option.
+1. You will arrive at a list of computers, select the one you want to revoke.
+1. You will be asked if you wish to revoke the machine; answer yes.  
 
-Of u nu systeemupdates installeert of een vastgelopen systeem probeert te herstellen, RIM staat voor u klaar tijdens het herstartproces. Door de optie &quot;Herstarten en opnieuw verbinden&quot; in het RIM-menu te selecteren, kunt u een normale herstart of een noodherstart uitvoeren, afhankelijk van de status van de computer. Terwijl de computer opnieuw opstart, informeert RIM u dat er pogingen worden ondernomen om opnieuw verbinding te maken.
-Houd er rekening mee dat als de computer opnieuw wordt opgestart door een software-installatie of handmatig op de gebruikelijke manier, u wordt gevraagd of u de sessie opnieuw wilt verbinden. Verder is het belangrijk om te weten dat in beide gevallen Mac-doelen pas opnieuw verbinding maken nadat de gebruiker zich heeft aangemeld. Dit komt doordat RIM niet automatisch kan starten op het aanmeldingsscherm vanwege platformbeperkingen, met name FileVault-schijfversleuteling.
+That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.
 
-### Toegang zonder toezicht of met prompt
+### AI Tools
 
-Met RIM kunt u als beheerder machines configureren voor toegang zonder toezicht of met prompt. Hierdoor kunt u hulp op afstand bieden zonder dat de gebruiker RIM hoeft te starten, een trefwoord hoeft in te voeren of zelfs maar in de buurt van de computer hoeft te zijn. Dit is handig als u een systeembeheerder bent die routineonderhoud uitvoert op computers in uw werkgroep, of voor klanten die u regelmatig ondersteuning biedt. U kunt ook onbeheerde toegang voor uw thuiscomputer toestaan als u vanaf een andere locatie toegang tot deze computer moet hebben.
-Er zijn verschillende manieren om machines te configureren voor onbeheerde toegang.
+The AI Tools menu is a convenient aggregator of accessibility-focused chatbots. All of these bots allow you to quickly gain answers on various subject matters related to assistive technology, operating systems, etc. Any users with a pro pass, personal community  subscription, personal weekend support subscription, or pro/enterprise subscription will have access to this capability.  
+Note that many of these bots - including our own - are in beta, and as such should be used with caution in the same way you shouldn't consider GPS directions as undisputed fact. More on this later.
 
-#### Tijdens een interactieve sessie
+The currrently available bots are as follows: 
+* RIMBot (beta)
+* Ask Microsoft Accessibility
+* FSCompanion (Beta)
 
-1. Open het RIM-menu.
-1. Selecteer &#x27;Onbeheerde of gevraagde toegang aanvragen&#x27;.
-1. U wordt gevraagd wat voor soort verbinding u wilt configureren. U hebt de volgende opties:
-1. Onbeheerd: hiermee kunnen sessies worden gestart zonder enige tussenkomst van de eindgebruiker.
-    1. Met prompt: bij deze configuratie krijgt de gebruiker een prompt te zien waarin wordt gemeld dat u verbinding maakt met zijn machine. Als hij de verbinding wil accepteren, moet hij op macOS op Option+Shift+Y drukken en op Windows op Windows+Shift+Y.
-1. U wordt gevraagd om deze machine een naam te geven. Voer een persoonlijke naam voor de machine in of, indien van toepassing, de machine-ID zoals deze in uw werkgroep wordt weergegeven.
-1. Druk op Enter.
-1. Op de clientcomputer verschijnt een dialoogvenster waarin de gebruiker wordt gevraagd of hij akkoord gaat met het instellen van zijn computer voor de door u aangevraagde toegang. Als hij ja antwoordt, krijgt u een melding dat de toegang is goedgekeurd.  
-
-##### Opmerking voor houders van een persoonlijk onbeheerd account
-
-Als u alle aan uw account toegewezen machineslots hebt gebruikt, zal RIM het verzoek niet uitvoeren. In deze situatie hebt u twee opties, beide mogelijk via het RIM-dashboard:
-1. Schrap een van uw machines, zodat er een slot vrijkomt.
-1. Upgrade uw abonnement met meer slots.
-
-#### Een machine registreren bij uw RIM-account
-
-Als u een van uw eigen machines wilt registreren voor onbeheerde toegang, kunt u dit doen zonder een interactieve sessie met de machine te starten. 
-1. Start RIM in de modus &#x27;Hulp ontvangen&#x27;.
-1. Klik op de knop &#x27;Deze machine toevoegen aan uw RIM-account&#x27;.
-1. Voer uw e-mailadres in en klik op Volgende.
-1. Wacht tot u de tweestaps-inlogcode ontvangt, voer deze in en u bent ingelogd.
-1. U wordt gevraagd welk type toegang u voor deze machine wilt configureren. U kunt kiezen uit:
-1. Onbeheerd: hiermee kunnen sessies worden gestart zonder enige tussenkomst van de eindgebruiker.
-1. Met vraag: bij deze configuratie krijgt de gebruiker een melding dat u verbinding maakt met zijn machine.
-1. Geef de machine een naam en klik vervolgens op de knop &#x27;Machine toevoegen&#x27;.
-1. De machine wordt geregistreerd in uw account, waardoor alle controllermachines die zijn aangemeld bij uw RIM-account verbinding kunnen maken met deze machine.
-
-##### Opmerking voor houders van een persoonlijk onbeheerd account
-
-Als u alle aan uw account toegewezen machineslots hebt gebruikt, zal RIM het verzoek niet uitvoeren. In deze situatie hebt u twee opties, die beide mogelijk zijn via het RIM-dashboard:
-1. Schrap een van uw machines, zodat er een slot vrijkomt.
-1. Upgrade uw abonnement met meer slots.
-
-#### Verbinding maken
-
-Nu we de machine hebben geregistreerd voor onbeheerde toegang, volgt hier hoe we een sessie starten.
-1. Start RIM in de controllermodus.
-1. In plaats van een trefwoord in te voeren, zoekt u de knop &quot;Kies een machine&quot; en activeert u deze.
-1. Wanneer u hierop klikt, verschijnt er een lijst met machines. Kies de gewenste machine en druk op Enter. U kunt ook de zoekbalk gebruiken om de lijst te verfijnen tot een specifieke machine.
-
-Als de doelmachine is geconfigureerd voor toegang op verzoek, krijgt de eindgebruiker een prompt. Zodra deze met ja antwoordt, wordt u verbonden. Als de sessie onbeheerd is, wordt u onmiddellijk verbonden en komt u in de zone voor afstandsbediening terecht.
-
-Let op: voor spraakgesprekken moet de doelgebruiker tijdens volledig onbeheerde sessies toestemming geven. Dit is echter niet vereist voor sessies met prompt.
-
-#### Een snelkoppeling maken voor een onbeheerde sessie
-
-Voor extra gemak kunt u snelkoppelingen op het bureaublad maken waarmee u automatisch onbeheerde sessies kunt starten. Om dit te doen:
-1. Ga naar de lijst met onbeheerde computers en selecteer de computer waarvoor u een snelkoppeling wilt maken.
-1. Klik op de knop &#x27;Snelkoppeling maken&#x27;.
-1. Er wordt automatisch een snelkoppeling aan uw bureaublad toegevoegd.
-
-Wanneer u deze snelkoppeling nu activeert, komt u automatisch in de externe sessie terecht of wordt er een prompt naar de computer van de gebruiker gestuurd die deze kan accepteren.
-
-<Windows>
-
-##### Meer manieren om snelkoppelingen voor onbeheerde sessies te gebruiken
-
-Aan snelkoppelingen voor onbeheerde sessies kunnen, net als aan andere snelkoppelingen, algemene sneltoetsen worden gekoppeld. Dit kan erg handig zijn als u een onderhoudstechnicus bent die meerdere computers in een werkgroep beheert. Als uw werkgroep bijvoorbeeld uit zes computers bestaat waarop u routineonderhoud uitvoert, kunt u Alt+Control+1 tot en met 6 configureren als sneltoetsen voor elke respectieve machine. Dit zou uw workflow aanzienlijk moeten versnellen.
-Bovendien kunt u een onbeheerde sessie oproepen via het uitvoervak als u de snelkoppeling naar uw gebruikersmap kopieert. Nadat u de snelkoppeling hebt gekopieerd, kunt u een onbeheerde sessie starten door uw-sessienaam.url in het uitvoervak te typen.
-</Windows>
-
-
-
-#### Onbeheerde toegang intrekken
-
-Als u niet langer wilt dat uw machine onbeheerd wordt bestuurd, kunt u de toegang van de controller intrekken. U hoeft hiervoor niet in een sessie te zijn.
-
-
-<Windows>
-1. Open het pictogram Remote Incident Manager in uw systeemvak.
-1. Als u het toetsenbord gebruikt, drukt u op Windows+B, vervolgens op de spatiebalk en vervolgens op de pijl naar links of rechts totdat u het pictogram vindt.
-1. Klik met de rechtermuisknop op dit pictogram of druk op de toets Applicaties of Shift+F10.
-1. Selecteer de optie &#x27;Toegang zonder toezicht intrekken&#x27;.
-1. U komt bij een lijst met computers. Selecteer de computer waarvan u de toegang wilt intrekken.
-1. U wordt gevraagd of u de toegang tot de computer wilt intrekken. Beantwoord deze vraag met &#x27;Ja&#x27;.  
-
-</Windows>
-
-
-<MacOS>
-
-1. Open het pictogram Remote Incident Manager in uw menu Extra&#x27;s/Statusmenu&#x27;s.
-1. Als u VoiceOver gebruikt, drukt u tweemaal op VO+M en zoekt u vervolgens het pictogram Remote Incident Manager.
-1. Klik op dit pictogram of druk op VO+spatiebalk.
-1. Selecteer de optie &#x27;Onbeheerde toegang intrekken&#x27;.
-1. U komt bij een lijst met computers. Selecteer de computer die u wilt intrekken.
-1. U wordt gevraagd of u de machine wilt intrekken. Beantwoord deze vraag met ja.
-</MacOS>
-  
-
-Dat is alles! De controller ontvangt een bericht dat deze machine niet langer beschikbaar is voor onbeheerde toegang. Als ze weer onbeheerde toegang nodig hebben, kunnen ze de procedure opnieuw starten om toestemming voor onbeheerde toegang aan te vragen, zoals hierboven beschreven.
-
-### AI-tools
-
-Het menu AI-tools is een handige verzameling van chatbots die gericht zijn op toegankelijkheid. Met al deze bots kunt u snel antwoorden krijgen op verschillende onderwerpen met betrekking tot ondersteunende technologie, besturingssystemen, enz. Alle gebruikers met een pro-pas, persoonlijk community-abonnement, persoonlijk weekendondersteuningsabonnement of pro/enterprise-abonnement hebben toegang tot deze functie.  
-Houd er rekening mee dat veel van deze bots, waaronder die van ons, zich in de bètafase bevinden en daarom met de nodige voorzichtigheid moeten worden gebruikt, net zoals u GPS-routebeschrijvingen niet als onbetwistbaar feit moet beschouwen. Hierover later meer.
-
-De momenteel beschikbare bots zijn als volgt: 
-* RIMBot (bèta)
-* Vraag Microsoft Accessibility
-* FSCompanion (bèta)
-
-Deze bots zijn momenteel uitsluitend beschikbaar in het Engels.
-Elke bot wordt geopend in een apart venster. Hoewel elke bot zijn eigen interfaceconventies heeft, kunt u altijd terugkeren naar uw externe sessie door op Escape te drukken.
+These bots are currently available in English exclusively.  
+Each bot will open in a contained window. While each bot has its own interface conventions, Pressing escape will always bring you back to your remote session.
 
 #### Disclaimers
 
-De AI Tools-functie binnen Remote Incident Manager (RIM) biedt een toegankelijke interface voor het gebruik van de Pneuma Solutions RIMBot en andere diensten van derden. Pneuma Solutions wijst uitdrukkelijk alle garanties af, zowel expliciet als impliciet, met betrekking tot de betrouwbaarheid, beschikbaarheid of langdurige ondersteuning van deze tools van derden. Tools die als bèta zijn aangemerkt, inclusief die welke door Pneuma Solutions zijn ontwikkeld, worden duidelijk als zodanig aangeduid in de AI Tools-interface van de RIM-applicatie of het bijbehorende dashboard.
+The AI Tools feature within Remote Incident Manager (RIM) provides an accessible interface for utilizing the Pneuma Solutions RIMBot and other third-party services. Pneuma Solutions expressly disclaims all warranties, whether express or implied, regarding the reliability, availability, or long-term support of these third-party tools. Tools designated as beta, including those developed by Pneuma Solutions, will be clearly labeled as such within the AI Tools interface of the RIM application or its associated dashboard.
 
-De RIMBot-ondersteuningschatbot is gedeeltelijk getraind met behulp van openbaar beschikbare gegevens over verschillende technologieën. Deze training wordt uitgevoerd om het vermogen van de bot om nauwkeurige en nuttige antwoorden te geven te verbeteren, met inachtneming van auteursrecht- en privacynormen. Pneuma Solutions streeft ernaar om ervoor te zorgen dat de antwoorden van de bot een redelijke mate van nauwkeurigheid behouden. Vanwege de inherente beperkingen van grote taalmodellen kan Pneuma Solutions echter niet garanderen dat alle antwoorden volledig nauwkeurig zijn.
+The RIMBot support chatbot is partially trained using publicly available data covering various technologies. This training is conducted to enhance the bot’s ability to deliver accurate and useful responses while adhering to copyright and privacy standards. Pneuma Solutions endeavors to ensure the bot’s responses maintain a reasonable degree of accuracy. However, due to the inherent limitations of large language models, Pneuma Solutions cannot guarantee that all responses will be entirely accurate.
 
-Hoewel er uitgebreide tests zijn uitgevoerd om de veiligheid en betrouwbaarheid van de bot te garanderen, kunnen er onnauwkeurigheden voorkomen. In het geval van een aantoonbaar onjuist antwoord, worden gebruikers aangemoedigd om het probleem te melden door een gedetailleerde kopie van het relevante chatlogboek te verstrekken via de RIM-applicatie of onze [contactpagina](https://pneumasolutions.com/contact/).
+Although extensive testing has been conducted to ensure the bot’s safety and reliability, inaccuracies may occur. In the event of a verifiably incorrect response, users are encouraged to report the issue by providing a detailed copy of the relevant chat log via the RIM application or our [contact page](https://pneumasolutions.com/contact/).
 
-Deze disclaimer is van toepassing op het gebruik van AI Tools en RIMBot en is onderworpen aan de [algemene voorwaarden](https://pneumasolutions.com/terms-of-use/) van gebruik van Pneuma Solutions.
+This disclaimer shall govern the use of AI Tools and RIMBot and is subject to the [terms and conditions](https://pneumasolutions.com/terms-of-use/) of use provided by Pneuma Solutions.
 

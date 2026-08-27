@@ -1,137 +1,137 @@
 ---
-title: Il cruscotto di gestione RIM
+title: The RIM Management Dashboard
 ---
 
-import Windows from "~/components/platform/Windows.astro"
-import MacOS from "~/components/platform/MacOS.astro"
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
 
-RIM dispone di una  dashboard basata sul web per facilitare varie attività di gestione delle macchine e degli account. È possibile gestire i computer incustoditi esistenti, creare programmi di installazione preconfigurati per i computer di destinazione e molto altro ancora.  
-Va notato che le funzionalità della dashboard dipendono in gran parte dal livello di abbonamento del proprio account. Ad esempio, gli utenti aziendali possono assegnare macchine a gruppi di destinazione, nonché creare programmi di installazione silenziosi. D&#x27;altra parte, chiunque (compresi gli utenti privati) può creare programmi di installazione personalizzati per i propri computer non presidiati.
+RIM features a  web-based dashboard to facilitate various machine and account management tasks. You can manage your existing unattended computers, create preconfigured installers for target computers, and much more.  
+It should be noted that the feature set of the dashboard is largely dependent on which subscription tier your account is under. For example, enterprise users can assign machines to target groups, as well as create silent installers. On the other hand, anyone (including personal users) can create custom installers for their unattended machines.
 
-### Individuazione della dashboard
+### Locating the Dashboard
 
-Se sei un controller, il modo più semplice per accedere alla dashboard è attraverso l&#x27;interfaccia principale di RIM. Facendo clic sul pulsante &quot;RIM Dashboard&quot; si aprirà automaticamente la dashboard nel browser predefinito, con il login già effettuato.  
-Se sei un amministratore di rete che non ha installato RIM, puoi semplicemente accedere al tuo account sul sito web RIM e apparirà la tua dashboard.
+If you're on a mobile device, the easiest way to get to the dashboard is through the menu located in the main RIM interface. Clicking the "RIM Dashboard" button will automatically open the dashboard in your default browser, with the login already taken care of.  
+If you are a network administrator who does not have RIM installed, you can simply log into your account on the RIM website and your dashboard will appear.
 
-### Gestione dei membri dell&#x27;organizzazione (Enterprise)
+### Managing Organization Members (Enterprise)
 
-Attivando il pulsante &quot;Organizzazione&quot; sulla dashboard RIM verrà visualizzato un menu di opzioni relative alla gestione dell&#x27;organizzazione e dei membri. La pagina &quot;Membri&quot; elencherà tutti i membri della tua organizzazione. È possibile modificare il ruolo, il reparto e il nome di tutti i membri, nonché disattivare o rimuovere qualsiasi membro dall&#x27;organizzazione, ad eccezione del proprietario dell&#x27;organizzazione. Si noti che la disattivazione di un membro renderà il suo account inutilizzabile, pur conservandone la registrazione.
+Activating the "Organization" button on the RIM dashboard will reveal a menu of options related to organization and member management. The "Members" page will list all the members in your organization. All members can have their role, department and name modified, and any member can be deactivated or removed from an organization except for the organization owner. Note that deactivating a member will render their account inoperable while retaining its record.
 
-Per aggiungere membri è sufficiente inserire il loro indirizzo e-mail, selezionare il loro ruolo (utente o amministratore), inserire facoltativamente il loro nome e selezionare il loro reparto, se ne è stato creato uno.
-Se si desidera aggiungere più membri, è possibile utilizzare il campo di modifica &quot;Membri&quot; per eseguire un&#x27;aggiunta in blocco. Questo campo di modifica accetta più righe di testo, consentendo di inserire le informazioni di ciascun membro su una riga separata. Su ogni riga è possibile inserire un singolo indirizzo e-mail o un indirizzo e-mail e un nome nel formato:  
+Adding members is as simple as entering their email address, selecting their role (user or administrator), optionally entering their name, and selecting their department if one has been created.
+If you have multiple members to add, you can use the "Members" edit field to perform a bulk add. This edit field accepts multiple lines of text, allowing you to enter each member's information on a separate line. On each line, you may enter either a single email address, or an email address and a name in the format:  
 *email@example.com John Doe*
 
-Una volta terminato, fai clic sul pulsante &quot;Aggiungi&quot;. 
+Once you are finished, click the "Add" button. 
 
-#### Dipartimenti
+#### Departments
 
-I dipartimenti consentono di organizzare i membri in base ai vari gruppi della tua organizzazione.
+Departments allow you to organize members according to the various groups of your organization.
 
-Per aggiungere un dipartimento, inserisci il suo nome nella casella di modifica &quot;Nome&quot; sotto l&#x27;intestazione &quot;Crea dipartimento&quot;.
+To add a department, enter its name in the "Name" edit box under the "Create department" heading.
 
-#### Esportazione dei dati dei membri
+#### Member Data export
 
-L&#x27;elenco dei membri della tua organizzazione può essere esportato come file CSV. Per scaricare l&#x27;esportazione:
-1. Scegli il separatore di campo che separerà le colonne del file. Le opzioni disponibili includono:
-* virgola
-* punto e virgola
-* tabulazione
-1. Attiva il pulsante &quot;Scarica&quot;.
+The member list in your organization can be exported as a CSV file. In order to download the export:
+1. Choose the field separator that will separate the columns of the file. The available options include:
+    * comma
+    * Semicolon
+    * Tab
+1. Activate the "Download" button.
 
-#### Restrizioni
+#### Restrictions
 
-A seconda della natura della tua organizzazione, potrebbero esserci alcune funzionalità a cui non desideri che il tuo personale abbia accesso. Pertanto, gli amministratori dell&#x27;organizzazione possono scegliere le funzionalità a cui desiderano consentire l&#x27;accesso ai controller. La schermata &quot;Restrizioni&quot;, accessibile dal menu &quot;Organizzazione&quot;, consente di configurare queste autorizzazioni.
+Depending on the nature of your organization, there may be certain features you do not want your staff to have access to. As such, organization admins can choose the features they wish to allow controllers access to. The "Restrictions" screen, accessed via the "Organization" menu, allows you to configure these permissions.
 
-Le autorizzazioni che possono essere attivate includono:
-* Consenti al controller di capovolgere la sessione
-    * Se questa opzione non è selezionata, l&#x27;opzione &quot;Capovolgi sessione&quot; scomparirà dal menu della sessione e la scorciatoia da tastiera non funzionerà.
-* Consenti al controller di avviare una conversazione vocale
-* Se questa opzione non è selezionata, la casella di controllo &quot;Avvia conversazione vocale&quot; scomparirà dalla schermata &quot;Fornisci assistenza remota&quot;, così come l&#x27;opzione di menu nel menu della sessione.
-* Consenti al controller di richiedere l&#x27;accesso non presidiato
-    * Se questa opzione non è selezionata, l&#x27;opzione per richiedere l&#x27;accesso non presidiato scomparirà dal menu della sessione.
-* Consenti il trasferimento di testo e file tra macchine tramite gli appunti
-* Se questa opzione non è selezionata, RIM ignorerà qualsiasi attività degli appunti.
-* Consenti al controller di bloccare la macchina di destinazione
-* Se questa opzione non è selezionata, l&#x27;opzione per bloccare la macchina di destinazione scomparirà dal menu della sessione.
-* Consenti al controller di registrare la sessione
-* Questa opzione è disabilitata per impostazione predefinita, rendendo la registrazione della sessione una funzione strettamente opzionale per le organizzazioni aziendali e/o i clienti professionali con l&#x27;add-on aziendale.
-* Se questa opzione non è selezionata, l&#x27;opzione per registrare la sessione scomparirà dal menu della sessione.
-* Questa restrizione impedisce inoltre l&#x27;auto_start lato client nel file config.toml
-* Consenti chat di testo durante la sessione
-* Questa opzione è disabilitata per impostazione predefinita, rendendo la chat di sessione una funzionalità strettamente opzionale per le organizzazioni aziendali e/o i clienti pro con l&#x27;add-on aziendale.
-* Se questa opzione non è selezionata, l&#x27;opzione per aprire la chat scomparirà dal menu della sessione.
+The permissions that can be toggled include:
+* Allow the controller to flip the session
+    * If this option is unchecked, the "Flip Session" option will disappear from the session menu, and the keyboard shortcut will not work.
+* Allow the controller to start a voice conversation
+    * If this option is unchecked, the "Start Voice Conversation" checkbox will disappear from the "Provide Remote Help" screen, as will the menu option in the session menu.
+* Allow the controller to request unattended access
+    * If this option is unchecked, the option to request unattended access will disappear from the session menu.
+* Allow text and files to be transferred between machines via the clipboard
+    * If this option is unchecked, RIM will ignore any and all clipboard activity.
+* Allow the controller to lock the target machine
+    * If this option is unchecked, the option to lock the target machine will disappear from the session menu.
+* Allow the controller to record the session
+    * This option is disabled by default, making session recording a strictly opt-in feature for enterprise organizations and/or pro customers with the enterprise addon.
+    * If this option is unchecked, the option to record the session will disappear from the session menu.
+    * This restriction additionally vetos the client-side auto_start in the config.toml file
+* Allow text chat during the session
+    * This option is disabled by default, making session chat a strictly opt-in feature for enterprise organizations and/or pro customers with the enterprise addon.
+    * If this option is unchecked, the option to open the chat will disappear from the session menu.
 
 
-Una volta configurati i permessi in base alle proprie esigenze, attivare il pulsante &quot;Aggiorna&quot;. Le modifiche non avranno effetto sulle sessioni attive al momento della modifica dei permessi. Tuttavia, avranno effetto su tutte le sessioni future senza richiedere il riavvio del client.
+Once you have configured the permissions to your satisfaction, activate the "Update" button. Changes will not affect any active sessions at the time the permissions are changed. They will however take effect for any and all future sessions without requiring a relaunch of the client.
 
-### Gestione dei target
+### Managing Targets
 
-Cliccando sul link &quot;Configura target&quot;, si accede a una pagina che consente di gestire tutte le macchine configurate per l&#x27;accesso non presidiato. È possibile cliccare su una qualsiasi di queste macchine per gestirla. Una volta all&#x27;interno, sarà possibile:
-* Rinominare il target
-* Spostare il target in un gruppo diverso (maggiori informazioni sui gruppi di target più avanti)
-* Avviare una sessione remota con il target
-* Eliminare il target
+When you click the "Configure Targets" link, you will arrive at a page that allows you to manage all the machines you have configured for unattended access. You can click on any one of these machines in order to manage it. Once inside, you will be able to:
+* Rename the target
+* Move the target to a different group (more on target groups later)
+* Launch a remote session with the target
+* Delete the target
 
-### Gruppi di target (per account Pro e superiori)
+### Target Groups (for Pro Accounts and Above)
 
-Supponiamo, ad esempio, che il tuo gruppo di lavoro sia distribuito in diverse sedi. Oppure, forse desideri assegnare gruppi di macchine ai tuoi tecnici addetti alla manutenzione ordinaria. I gruppi di target ti consentono proprio questo. Per farlo, è sufficiente fare clic sul pulsante &quot;Crea gruppo di target&quot;, assegnare un nome al gruppo e inviare.  
-Puoi avere tutti i gruppi target necessari per il tuo caso d&#x27;uso. 
+Say for instance your workgroup is spread out among several different locations. Or maybe you want to designate groups of machines to your routine maintenance techs. Target groups allow you to do just that. In order to do this, simply click the "Create Target Group" button, name your group, and submit.  
+You may have as many target groups as is needed for your use case. 
 
-#### Controllo degli accessi (per organizzazioni aziendali)
+#### Access Control (for Enterprise Organizations)
 
-Se la tua organizzazione assegna un tecnico di supporto a un insieme specifico di macchine, probabilmente vorrai assicurarti che abbia accesso solo a quell&#x27;insieme specifico. È qui che entra in gioco l&#x27;impostazione del controllo degli accessi per i gruppi target.  
-Quando clicchi su un gruppo di destinazione, ti vengono fornite opzioni per gestire i computer nel gruppo, nonché il gruppo stesso. La sezione di controllo degli accessi è dove puoi concedere l&#x27;accesso a questo gruppo su base individuale per ogni account. Basta inserire l&#x27;indirizzo e-mail dell&#x27;account che desideri aggiungere, quindi cliccare sul pulsante &quot;Concedi accesso&quot;. Tieni presente che questo account può esistere al di fuori del dominio della tua organizzazione aziendale.  
-Una volta fatto ciò, verrà visualizzata una tabella degli account a cui è stato concesso l&#x27;accesso a questo gruppo. Sotto ogni account è presente un pulsante &quot;Revoca accesso&quot;. Questo pulsante non richiede ulteriori conferme.  
-Va notato che a tutti gli amministratori dell&#x27;organizzazione viene automaticamente concesso l&#x27;accesso per gestire tutti i gruppi creati nell&#x27;ambito dell&#x27;organizzazione. Inoltre, tutti gli indirizzi e-mail dei domini della tua organizzazione verranno aggiunti di default alla tua organizzazione in RIM. Se hai bisogno di un controllo più granulare su chi viene inserito, puoi disabilitare questa funzione nell&#x27;area membri principale della tua organizzazione. Inoltre, nell&#x27;area membri puoi aggiungere indirizzi e-mail in blocco separandoli con virgole, spazi o interruzioni di riga.
+If your organizations assign a support technician to a specific set of machines, you probably want to ensure they only have access to that specific set. This is where the access control setting for target groups comes in.  
+When you click on a target group, you are given options to manage the machines in the group, as well as the group itself. The access control section is where you may grant access to this group on a per-account basis. Simply enter the email address of the account you wish to add, then click the "Give Access" button. Note that this account can exist outside of your enterprise organization's domain.  
+Once this is done, you will be presented with a table of accounts that are given access to this group. Below each account is a "Revoke Access" button. This button does not require further confirmation.  
+It should be noted that all organization administrators are automatically granted access to manage any and all groups that are created under the organization. Additionally, any email addresses under your organization's domains will be added to your organization in RIM by default. Should you require more granular control over who gets onboarded, you can disable this in your organization's main members area. What's more, when in the members area you can add email addresses in bulk by way of commas, spaces or line breaks in between the email addresses.
 
-### Configurazione di un programma di installazione RIM preconfigurato (Pro o superiore)
+### Setting up a Preconfigured RIM Installer (Pro or above)
 
-Uno dei modi più semplici per configurare un computer per connessioni automatiche o con richiesta di conferma è creare un programma di installazione personalizzato. Ciò è incredibilmente utile se stai configurando distribuzioni di massa o anche come modo più semplice per rendere RIM operativo sul computer di un utente finale a cui intendi fornire assistenza regolarmente.
+One of the easiest ways to set up a machine for unattended or prompted connections is by creating a custom installer. This is incredibly useful if you are configuring mass deployments, or even as a simpler way to get RIM up and running on an end user's computer you plan on providing support for on the regular.
 
-Per farlo:
-1. Nella schermata di gestione dei target, fai clic sul pulsante &quot;Crea programma di installazione target&quot;.
-1. Ti verrà prima chiesto se desideri che questo computer sia configurato per un accesso completamente automatico o per un accesso con richiesta, in cui l&#x27;utente deve accettare una richiesta per avviare la connessione.
-1. Ti verrà quindi chiesto di assegnare un gruppo di destinazione. Tieni presente che la selezione del gruppo di destinazione passerà automaticamente al gruppo di destinazione scelto se avvii la configurazione del programma di installazione dalla pagina del tuo gruppo.
-1. Ti verrà chiesto per quanto tempo desideri che questo programma di installazione sia valido. Può essere valido per un periodo compreso tra 7 e 30 giorni, oppure permanentemente valido per i piani aziendali impostando la scadenza su mai.
-1. Ti verrà quindi data la possibilità di assegnare un nome di base. A qualsiasi macchina fornita tramite questo pacchetto di installazione verrà assegnato questo nome di base.
-1. Ti verrà quindi presentata una casella di controllo che ti consentirà di scegliere di ricevere una notifica via e-mail quando un utente installa RIM tramite questo programma di installazione.
-1. Se sei un amministratore aziendale, vedrai una casella di controllo che ti consente di creare il programma di installazione come pacchetto MSI. Questa opzione è utile per la distribuzione di massa di un programma di installazione personalizzato su un cluster di macchine che sarà designato al gruppo di destinazione specificato.
-1. Ti verrà chiesto di fornire un nome per il programma di installazione e, facoltativamente, alcune note. Queste sono destinate alla documentazione interna e non appariranno nel programma di installazione creato.
-1. Fai clic su &quot;Crea programma di installazione&quot;. Ti verrà presentato il link per il download che potrai copiare negli appunti e inviare al tuo utente finale. In alternativa, puoi scaricare direttamente il programma di installazione per utilizzarlo nelle distribuzioni di massa. Puoi eliminare il programma di installazione da questa schermata se desideri renderlo inutilizzabile prematuramente.
+IN order to do this:
+1. In the target management screen, click the "Build Target Installer" button.
+1. You will first be asked if you want this machine to be configured for fully unattended access, or for prompted access in which the user has to accept a prompt to initiate the connection.
+1. You will then be asked for a target group assignment. Note that the target group selection will automatically go to your chosen target group if you initiate the installer configuration from your group's page.
+1. You will be asked how long you want this installer to be valid for. It can be valid for anywhere between 7 to 30 days, or permanently valid for enterprise plans by setting the expiration to never.
+1. You are then given the option to assign a bass name. Any machine provisioned via this installation package will have this base name assigned to it.
+1. You will then be presented with a checkbox that lets you opt into an email notification when a user installs RIM via this installer.
+1. If you are an enterprise admin, you will see a checkbox that allows you to build the installer as an MSI package. This option is useful for mass deployment of a custom installer to a machine cluster that will be designated to the given target group.
+1. You will be asked to provide an installer name, and optionally some notes. These are for internal records and will not appear within the created installer.
+1. Click on "Build Installer." You will be presented with the download link that you can copy to the clipboard and send to your end user. Alternatively, you may download the installer directly for use in mass deployments. You may delete the installer from this screen should you choose to render it inoperable prematurely.
 
-Ora che hai il tuo programma di installazione, puoi eseguirlo in due modi. In entrambi i casi, il programma di installazione interrogherà il server per verificare la validità del programma di installazione. Se l&#x27;installatore è valido, il computer verrà aggiunto all&#x27;elenco dei computer sia nel tuo account che nel client RIM al termine dell&#x27;installazione. Un installatore non valido non verrà eseguito.
+Now that you have your installer, it can be run in one of two ways. In either case, the installer will query the server to check the validity of the installer. If the installer is valid, the machine will be added to your list of machines in both your account as well as the RIM client after the installer is complete. An invalid installer will not run.
 
-Esecuzione normale
+#### Normal Execution
 
-Quando si esegue l&#x27;installatore, all&#x27;utente verrà visualizzata una finestra di dialogo contenente le seguenti informazioni:
-* Il nome del tecnico e la sua organizzazione, se applicabile
-* La natura della connessione, ovvero se è richiesta o meno una richiesta di conferma.
+The user will get a prompt when running the installer, containing the following information:
+* The technician's name along with their organization, if applicable
+* the nature of the connection, I.E whether a prompt is required or not
 
-L&#x27;utente può scegliere di rispondere sì o no all&#x27;installazione. Rispondendo no, l&#x27;installazione verrà annullata. Al termine dell&#x27;installazione, l&#x27;utente riceverà un messaggio che lo informa che il suo computer è ora configurato per l&#x27;accesso remoto.
+The user can choose to either answer yes or no to the installation. Answering no will cancel the installation. After the installer finishes, the user will get a prompt informing them that their machine is now set up for remote access.
 
-#### Installazione silenziosa (solo programmi di installazione aziendali)
+#### Silent Install (Enterprise Installers Only)
 
-È possibile avviare un&#x27;installazione silenziosa eseguendo il programma di installazione eseguibile con il parametro della riga di comando */S*. Ciò è utile quando si installa RIM come parte di una routine di distribuzione di massa.
+A silent install can be initiated by running the executable installer with the */S* command line parameter. This is useful when installing RIM as part of a mass deployment routine.
 
-### Cronologia delle sessioni
+### Session History
 
-È possibile visualizzare l&#x27;intera cronologia delle sessioni passate tramite il dashboard RIM. La cronologia delle sessioni contiene attualmente la data e l&#x27;ora di ciascuna sessione, il nome del computer a cui ci si è connessi e la durata della sessione. È anche possibile aggiungere commenti a una sessione tramite il link &quot;Aggiungi commento&quot; nella riga della sessione. Ciò è utile per aggiungere note sullo stato attuale di un incidente sia per sé stessi che per gli amministratori dell&#x27;organizzazione.
+You can view your entire history of past sessions through the RIM dashboard. The session history currently contains the date and time of each session, the name of the computer you connected to, and the duration of the session. You may also choose to add comments to a session via the "Add Comment" link within the session row. This is useful for adding notes on the current status of an incident for your own sake as well as for the sake of organization administrators.
 
-L&#x27;intera cronologia delle sessioni può essere esportata per essere visualizzata in un secondo momento tramite un&#x27;applicazione di foglio elettronico. Attivare il pulsante &quot;Scarica cronologia sessioni come CSV&quot; situato sotto la tabella della cronologia delle sessioni per visualizzare una pagina di personalizzazione per l&#x27;esportazione dei dati. In questa pagina è possibile scegliere l&#x27;intervallo di tempo dell&#x27;esportazione, nonché il simbolo utilizzato per separare i campi.
+Your entire session history can be exported for later viewing via a spreadsheet application. Activate the "Download session history as CSV" button located below the session history table to reveal a customization page for your data export. On this page, you can choose the timespan of the export, as well as the symbol used to separate the fields.
 
-### Gestione dell&#x27;abbonamento (piani Personal e Pro)
+### Managing your Subscription (Personal and Pro Plans)
 
-La dashboard consente di visualizzare e gestire facilmente i dettagli dell&#x27;abbonamento RIM. Facendo clic sul link &quot;Gestisci abbonamento&quot;, è possibile:
-* Aggiornare il piano
-* Aggiornare il metodo di pagamento
-* Annullare i pagamenti ricorrenti
+The dashboard allows you to easily view and manage your RIM subscription details. Upon clicking the "manage subscription" link, you can:
+* Upgrade your plan
+* Update your payment method
+* Cancel recurring payments
 
-#### Aggiornamento del piano
+#### Upgrading your Plan
 
-Puoi aggiornare facilmente il tuo abbonamento. Se hai un piano mensile, ti verrà addebitato il costo rimanente dal nuovo importo, mentre per i mesi successivi ti verrà addebitato l&#x27;intero nuovo importo. Cliccando su &quot;Aggiorna abbonamento&quot; si apre una pagina quasi identica alla pagina iniziale di selezione del piano. Ci sono alcune differenze significative che illustreremo di seguito:
-* Non è possibile effettuare il downgrade del piano a uno con un numero inferiore di macchine. È tuttavia possibile effettuare l&#x27;upgrade da un piano mensile a uno annuale con lo stesso numero di macchine del piano attuale. Per effettuare il downgrade, è necessario annullare il piano, attendere la scadenza e quindi attivare un nuovo piano con un numero inferiore di macchine.
-* I piani Enterprise, compreso l&#x27;add-on Enterprise, non possono essere acquistati direttamente tramite questa pagina.
+You can easily upgrade your subscription. If you are on a monthly plan, you will be prorated the remaining charge from the new amount, with the full new amount being charged for subsequent months. Clicking "Upgrade Subscription" reveals a page nearly identical to the initial plan selection page. There are a few notable differences which we will outline below:
+* You cannot downgrade your plan to one with fewer machines. You can, however, upgrade from a monthly to a yearly plan with the same number of machines as your current plan. In order to downgrade, you would need to cancel your plan, wait for it to expire, then initiate a new plan with fewer machines.
+* Enterprise plans, including the enterprise addon, cannot be acquired directly through this page.
 
-#### Annullamento dei pagamenti ricorrenti
+#### Canceling Recurring Payments
 
-Quando si fa clic su &quot;Annulla rinnovo automatico&quot;, verrà richiesta una conferma, dopodiché l&#x27;abbonamento scadrà alla fine del periodo corrente.
+When you click "Cancel Automatic Renewal," you will be asked for confirmation, after which your subscription will be set to expire at the end of the current term.

@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   return allPages.flatMap((page) => {
     const lang = getLangFromSlug(page.slug)
     const slug = stripLangFromSlug(page.slug)
-    return ["windows", "macos"].map((platform) => {
+    return ["ios", "android"].map((platform) => {
       return {
         params: { lang, platform, slug },
         props: { ...page, lang, platform, slug },

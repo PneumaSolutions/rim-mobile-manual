@@ -1,35 +1,41 @@
 ---
-title: Aansluiten
+title: Getting Connected
 ---
 
-import Windows from "~/components/platform/Windows.astro"
-import MacOS from "~/components/platform/MacOS.astro"
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
 
-Het verbindingsproces van Remote Incident Manager is ontworpen met snelheid en eenvoud in het achterhoofd, zowel voor de persoon die hulp ontvangt als voor de persoon die hulp verleent.
+Remote Incident Manager's first-run experience is designed with speed and simplicity in mind. 
 
-### Verbinding maken met een controller
+### Logging into an Account
 
-Wanneer u Remote Incident Manager voor het eerst opstart, bevindt u zich standaard in doelmodus. Dit betekent dat u verbinding maakt met een persoon die een remote support sessie voor u heeft opgezet.  
-Je komt terecht in een bewerkingsvak met het label "sleutelwoord" Voer het trefwoord in dat de persoon die je helpt je geeft zodra hij/zij je toestemming geeft en druk op enter. Dat is het, je bent verbonden!
+When you first launch Remote Incident Manager, you will be shown a Welcome screen giving you the opportunity to log into an account.
 
-### Een verzoek om verbinding te maken accepteren
+Please note: The mobile version of Remote Incident Manager strictly serves as a controller. This means that it is exclusively used to connect to remote computers running the desktop client. We therefore recommend creating an account using the desktop client before initiating the login process.
 
-Als een technicus u regelmatig ondersteuning biedt, kan uw apparaat zo ingesteld zijn dat het een verzoek om verbinding te maken ontvangt zonder dat u een sleutelwoord hoeft in te voeren. RIM laat dan een geluidssignaal horen en kondigt aan dat uw technicus verbinding probeert te maken.  
-<Windows>Om de verbinding te accepteren, drukt u op **Windows+Shift+Y** en de sessie begint tijdelijk.</Windows>
-<MacOS>Om de verbinding te accepteren, drukt u op **Option+Shift+Y** en de sessie begint tijdelijk.</MacOS>
+1. Press the "Sign in" button to initiate the login process. When asked whether you would like to launch getrim.app in Safari, activate "Continue".
+1. Enter your email address.
+1. Enter the verification code that will be texted to your phone number.
+1. Once verification is successful, you will be placed in the main screen of the application.
 
-### Verbinding maken met een doel
+The application is divided into sections based on the two different connection types available to you.
 
-Het proces voor het opzetten van de sessie is vergelijkbaar. In plaats van het sleutelwoord in te voeren, gaat u naar de knop "Geef in plaats daarvan hulp". Als u dit voor de eerste keer doet, wordt u gevraagd om een account in te stellen.
-1. Voer je e-mailadres in.
-1. Controleer je e-mail voor een verificatiecode en voer deze in RIM in.
-1. Vervolgens wordt u gevraagd om uw naam, locatie en telefoonnummer in te voeren.
-1. Tot slot ontvang je nog een verificatiecode op je telefoon. Voer deze code in bij RIM.
-    1. Als je geen mobiele telefoon hebt die sms-berichten kan ontvangen, vul dan [dit formulier] in (https://pneumasolutions.com/account-verification/). Wij zullen u helpen om uw account te verifiëren.
-    1. Een opmerking voor internationale nummers: Als je verificatiecode niet doorkomt, controleer dan of de landcode voor je nummer wordt aangeduid met het plusteken in plaats van 00.
+#### Keyword Session
 
-Nu je bent ingelogd, voer je het trefwoord in dat het doel zal gebruiken om verbinding met je te maken. Wanneer je voorbij het bewerkingsvak navigeert, kom je twee selectievakjes tegen die bepalen of je al dan niet een spraakgesprek wilt starten of het geluid van de computer op afstand wilt uitschakelen tijdens de sessie (deze opties kunnen ook tijdens de sessie worden in- of uitgeschakeld). Daarna vind je de knop "Starten". Als je hierop klikt, blijf je in de wachtkamer totdat je doel verbinding maakt. Op dat moment wil je het sleutelwoord dat je net hebt ingevoerd naar de persoon sturen met wie je verbinding gaat maken. Het trefwoord is 5 minuten geldig of totdat er een succesvolle verbinding tot stand is gebracht, wat het eerst komt. Zodra ze verbinding hebben gemaakt, ontvang je een melding dat de sessie op afstand gaat beginnen.  
+The **Keyword Session** portion of the app allows you to initiate a session with a remote computer by way of a keyword. In order to facilitate a keyword session:
 
-<Windows>Let op de genoemde **Windows+Shift+Backspace** sneltoets, want daarmee wordt het RIM-menu op je machine geopend. Als je uitsluitend op het toetsenbord vertrouwt, is dit de enige manier om toetsenbordinvoer terug te leiden naar je eigen systeem.</Windows>
-<MacOS>Let op de genoemde sneltoets **Option+Shift+Backspace**, want hiermee wordt het RIM-menu op uw computer geopend. Als je uitsluitend op het toetsenbord vertrouwt, is dit de enige manier om toetsenbordinvoer terug te leiden naar je eigen systeem.</MacOS>
-Nadat je dit dialoogvenster hebt verlaten, wordt de sessie op afstand gestart.
+1. Enter the keyword in the "Keyword" text field.
+1. Toggle the "Start voice conversation" switch if you wish to have a voice conversation during the session.
+1. Press the "Connect with keyword" button to begin the connection process. You will be placed in a waitin screen.
+1. Send the keyword to the person who you wish to connect to.
+1. Once that person enters the keyword, your phone and their computer will instantly connect.
+
+#### My Machines
+
+The **My machines** section lists the machines you have configured for unattended or prompted access. This is the place you would expect to go if, for example, you plan on regularly connecting to your computer at home while out and about. Simply tap on any of the machines in the list, and one of two things will happen:
+1. In the case of an unattended session, the connection will instantly be established.
+1. In the case of a prompted session, the person you connect to will receive a prompt asking them if they would like you to connect.
+	1. A Windows user should press Windows+Shift+Y or Windows+Shift+N for yes or no, respectively.
+	1. A macOS user should press Option+Shift+Y or Option+Shift+N for yes or no, respectively.
+	1. If the user agrees to allow the connection, your session will be initiated.
+

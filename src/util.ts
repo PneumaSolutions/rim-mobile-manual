@@ -7,12 +7,15 @@ export function getLanguageFromURL(pathname: string) {
   return langCodeMatch ? langCodeMatch[1] : "en"
 }
 
-export type Platform = "windows" | "macos"
+export type Platform = "ios" | "android"
+
+/** Default platform when a URL doesn't specify one. */
+export const DEFAULT_PLATFORM: Platform = "ios"
 
 export function getPlatformFromURL(pathname: string): Platform {
-  const platformMatch = pathname.match(/^\/[-a-zA-Z]+\/(windows|macos)\//)
+  const platformMatch = pathname.match(/^\/[-a-zA-Z]+\/(ios|android)\//)
   if (!platformMatch) {
-    throw new Error("can't get platform from URL")
+    return DEFAULT_PLATFORM
   }
   return platformMatch[1] as Platform
 }
@@ -46,16 +49,3 @@ export function getLanguageFromRequest(request: Request) {
   return "en"
 }
 
-export function getPlatformFromRequest(request: Request): Platform {
-  let ua = request.headers.get("user-agent")
-  if (ua) {
-    ua = ua.toLowerCase()
-    if (ua.indexOf("win") != -1) {
-      return "windows"
-    }
-    if (ua.indexOf("mac") != -1) {
-      return "macos"
-    }
-  }
-  return "windows"
-}

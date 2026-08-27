@@ -1,136 +1,137 @@
 ---
-title: Il cruscotto di gestione RIM
+title: The RIM Management Dashboard
 ---
 
-import Windows from "~/components/platform/Windows.astro"
-import MacOS from "~/components/platform/MacOS.astro"
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
 
-RIMは、様々なマシンおよびアカウント管理タスクを容易にするWebベースのダッシュボードを備えています。既存の無人コンピュータの管理、ターゲットコンピュータ用の事前設定済みインストーラの作成など、多様な操作が可能です。  
-ダッシュボードの機能セットは、アカウントのサブスクリプション階層に大きく依存することに留意してください。例えば、エンタープライズユーザーはマシンをターゲットグループに割り当てたり、サイレントインストーラを作成したりできます。 一方、個人ユーザーを含む全てのユーザーは、無人マシン向けのカスタムインストーラーを作成できます。
+RIM features a  web-based dashboard to facilitate various machine and account management tasks. You can manage your existing unattended computers, create preconfigured installers for target computers, and much more.  
+It should be noted that the feature set of the dashboard is largely dependent on which subscription tier your account is under. For example, enterprise users can assign machines to target groups, as well as create silent installers. On the other hand, anyone (including personal users) can create custom installers for their unattended machines.
 
-### ダッシュボードの場所
+### Locating the Dashboard
 
-コントローラーの場合、ダッシュボードにアクセスする最も簡単な方法は、RIMのメインインターフェースから行うことです。「RIMダッシュボード」ボタンをクリックすると、デフォルトのブラウザでダッシュボードが自動的に開き、ログインは既に完了しています。  
-RIMをインストールしていないネットワーク管理者の場合は、RIMウェブサイトでアカウントにログインするだけでダッシュボードが表示されます。
+If you're on a mobile device, the easiest way to get to the dashboard is through the menu located in the main RIM interface. Clicking the "RIM Dashboard" button will automatically open the dashboard in your default browser, with the login already taken care of.  
+If you are a network administrator who does not have RIM installed, you can simply log into your account on the RIM website and your dashboard will appear.
 
-### 組織メンバーの管理（エンタープライズ）
+### Managing Organization Members (Enterprise)
 
-RIMダッシュボードの「組織」ボタンを有効にすると、組織およびメンバー管理に関連するオプションメニューが表示されます。「メンバー」ページには組織内の全メンバーが一覧表示されます。 全メンバーの役割・部署・名前は変更可能で、組織所有者を除くメンバーは非アクティブ化または組織からの削除が可能です。メンバーを非アクティブ化するとアカウントは使用不能になりますが、記録は保持されます。
+Activating the "Organization" button on the RIM dashboard will reveal a menu of options related to organization and member management. The "Members" page will list all the members in your organization. All members can have their role, department and name modified, and any member can be deactivated or removed from an organization except for the organization owner. Note that deactivating a member will render their account inoperable while retaining its record.
 
-メンバー追加は、メールアドレス入力→役割選択（ユーザーまたは管理者）→任意で名前入力→部署選択（作成済みの場合）という簡単な手順です。
-複数のメンバーを追加する場合は、「メンバー」編集フィールドを使用して一括追加が可能です。この編集フィールドは複数行のテキストを受け付け、各メンバーの情報を別々の行に入力できます。各行には、単一のメールアドレス、または以下の形式でメールアドレスと名前を入力できます：  
+Adding members is as simple as entering their email address, selecting their role (user or administrator), optionally entering their name, and selecting their department if one has been created.
+If you have multiple members to add, you can use the "Members" edit field to perform a bulk add. This edit field accepts multiple lines of text, allowing you to enter each member's information on a separate line. On each line, you may enter either a single email address, or an email address and a name in the format:  
 *email@example.com John Doe*
 
-入力が完了したら「追加」ボタンをクリックしてください。 
+Once you are finished, click the "Add" button. 
 
-#### 部署
+#### Departments
 
-部署機能により、組織内の様々なグループに応じてメンバーを整理できます。
+Departments allow you to organize members according to the various groups of your organization.
 
-部署を追加するには、「部署を作成」見出し下の「名称」編集ボックスに部署名を入力してください。
+To add a department, enter its name in the "Name" edit box under the "Create department" heading.
 
-#### メンバーデータのエクスポート
+#### Member Data export
 
-組織のメンバーリストはCSVファイルとしてエクスポートできます。エクスポートをダウンロードするには：  
-1. ファイルの列を区切るフィールド区切り文字を選択します。利用可能なオプションは以下の通りです：  
-    * カンマ  
-    * セミコロン  
-    * タブ  
-1. 「ダウンロード」ボタンを有効にします。  
+The member list in your organization can be exported as a CSV file. In order to download the export:
+1. Choose the field separator that will separate the columns of the file. The available options include:
+    * comma
+    * Semicolon
+    * Tab
+1. Activate the "Download" button.
 
-#### 制限事項
+#### Restrictions
 
-組織の性質に応じて、スタッフにアクセスを許可したくない機能がある場合があります。そのため、組織管理者はコントローラーに許可する機能を選択できます。「組織」メニューからアクセスできる「制限」画面で、これらの権限を設定できます。
+Depending on the nature of your organization, there may be certain features you do not want your staff to have access to. As such, organization admins can choose the features they wish to allow controllers access to. The "Restrictions" screen, accessed via the "Organization" menu, allows you to configure these permissions.
 
-切り替え可能な権限は以下の通りです：
-* セッションの切り替えをコントローラーに許可
-    * このオプションをオフにすると、セッションメニューから「セッション切り替え」オプションが消え、キーボードショートカットも機能しなくなります。
-* コントローラーが音声会話を開始することを許可する
-    * このオプションをオフにすると、「リモートヘルプの提供」画面から「音声会話を開始」チェックボックスが消え、セッションメニューのオプションも消えます。
-* コントローラーが無人アクセスを要求することを許可する
-    * このオプションがオフの場合、セッションメニューから無人アクセス要求オプションが消えます。
-* クリップボード経由でのマシン間テキスト・ファイル転送を許可する
-    * このオプションがオフの場合、RIMはクリップボード操作を一切無視します。
-* コントローラーがターゲットマシンをロックすることを許可する
-    * このオプションがオフの場合、セッションメニューからターゲットマシンロックオプションが消えます。
-* コントローラーによるセッション記録を許可する
-    * このオプションはデフォルトで無効化されており、セッション記録はエンタープライズ組織および/またはエンタープライズアドオンを所有するプロ顧客向けの厳密なオプトイン機能となります。
-    * このオプションがオフの場合、セッション記録オプションはセッションメニューから消えます。
-    * この制限は、config.tomlファイル内のクライアント側auto_start設定も無効にします
-* セッション中のテキストチャットを許可する
-    * このオプションはデフォルトで無効化されており、セッションチャットはエンタープライズ組織およびエンタープライズアドオンを契約しているプロ顧客向けの完全なオプトイン機能となります。
-    * このオプションがオフの場合、セッションメニューからチャットを開くオプションが非表示になります。
+The permissions that can be toggled include:
+* Allow the controller to flip the session
+    * If this option is unchecked, the "Flip Session" option will disappear from the session menu, and the keyboard shortcut will not work.
+* Allow the controller to start a voice conversation
+    * If this option is unchecked, the "Start Voice Conversation" checkbox will disappear from the "Provide Remote Help" screen, as will the menu option in the session menu.
+* Allow the controller to request unattended access
+    * If this option is unchecked, the option to request unattended access will disappear from the session menu.
+* Allow text and files to be transferred between machines via the clipboard
+    * If this option is unchecked, RIM will ignore any and all clipboard activity.
+* Allow the controller to lock the target machine
+    * If this option is unchecked, the option to lock the target machine will disappear from the session menu.
+* Allow the controller to record the session
+    * This option is disabled by default, making session recording a strictly opt-in feature for enterprise organizations and/or pro customers with the enterprise addon.
+    * If this option is unchecked, the option to record the session will disappear from the session menu.
+    * This restriction additionally vetos the client-side auto_start in the config.toml file
+* Allow text chat during the session
+    * This option is disabled by default, making session chat a strictly opt-in feature for enterprise organizations and/or pro customers with the enterprise addon.
+    * If this option is unchecked, the option to open the chat will disappear from the session menu.
 
 
-権限設定が完了したら「更新」ボタンをアクティブ化してください。権限変更時のアクティブセッションには影響しません。ただし、クライアントの再起動を必要とせず、今後の全てのセッションに適用されます。
+Once you have configured the permissions to your satisfaction, activate the "Update" button. Changes will not affect any active sessions at the time the permissions are changed. They will however take effect for any and all future sessions without requiring a relaunch of the client.
 
-### ターゲットの管理
+### Managing Targets
 
-「ターゲットの設定」リンクをクリックすると、無人アクセス用に設定した全マシンの管理ページが表示されます。任意のマシンをクリックして管理できます。内部では以下の操作が可能です：
-* ターゲットの名前変更
-* ターゲットを別のグループに移動（ターゲットグループの詳細は後述）
-* ターゲットとのリモートセッションを開始する
-* ターゲットを削除する
+When you click the "Configure Targets" link, you will arrive at a page that allows you to manage all the machines you have configured for unattended access. You can click on any one of these machines in order to manage it. Once inside, you will be able to:
+* Rename the target
+* Move the target to a different group (more on target groups later)
+* Launch a remote session with the target
+* Delete the target
 
-### ターゲットグループ（Proアカウント以上）
+### Target Groups (for Pro Accounts and Above)
 
-例えば、ワークグループが複数の場所に分散している場合や、定期メンテナンス担当技術者にマシン群を割り当てたい場合などに便利です。ターゲットグループを作成するには、「ターゲットグループを作成」ボタンをクリックし、グループ名を入力して送信します。  
-使用ケースに応じて必要な数のターゲットグループを作成できます。 
+Say for instance your workgroup is spread out among several different locations. Or maybe you want to designate groups of machines to your routine maintenance techs. Target groups allow you to do just that. In order to do this, simply click the "Create Target Group" button, name your group, and submit.  
+You may have as many target groups as is needed for your use case. 
 
-#### アクセス制御（エンタープライズ組織向け）
+#### Access Control (for Enterprise Organizations)
 
-組織が特定の機械セットにサポート技術者を割り当てる場合、その技術者が特定のセットのみにアクセスできるようにしたいでしょう。ここでターゲットグループのアクセス制御設定が役立ちます。  
-ターゲットグループをクリックすると、グループ内のマシンとグループ自体を管理するオプションが表示されます。アクセス制御セクションでは、アカウント単位でこのグループへのアクセス権を付与できます。追加したいアカウントのメールアドレスを入力し、「アクセス権を付与」ボタンをクリックするだけです。このアカウントは、御社のエンタープライズ組織のドメイン外に存在しても構いません。  
-設定完了後、当該グループへのアクセス権が付与されたアカウントの一覧が表示されます。各アカウントの下には「アクセス権の取り消し」ボタンがあります。このボタンは追加確認を必要としません。  
-組織管理者は、組織内に作成された全てのグループを管理する権限を自動的に付与されます。また、組織ドメイン下のメールアドレスはデフォルトでRIMの組織に追加されます。 オンボーディング対象者をより細かく制御する必要がある場合は、組織のメインメンバーエリアでこの機能を無効化できます。さらに、メンバーエリアではメールアドレスをカンマ、スペース、または改行で区切って一括追加できます。
+If your organizations assign a support technician to a specific set of machines, you probably want to ensure they only have access to that specific set. This is where the access control setting for target groups comes in.  
+When you click on a target group, you are given options to manage the machines in the group, as well as the group itself. The access control section is where you may grant access to this group on a per-account basis. Simply enter the email address of the account you wish to add, then click the "Give Access" button. Note that this account can exist outside of your enterprise organization's domain.  
+Once this is done, you will be presented with a table of accounts that are given access to this group. Below each account is a "Revoke Access" button. This button does not require further confirmation.  
+It should be noted that all organization administrators are automatically granted access to manage any and all groups that are created under the organization. Additionally, any email addresses under your organization's domains will be added to your organization in RIM by default. Should you require more granular control over who gets onboarded, you can disable this in your organization's main members area. What's more, when in the members area you can add email addresses in bulk by way of commas, spaces or line breaks in between the email addresses.
 
-### 事前設定済みRIMインストーラーの設定（Pro以上）
+### Setting up a Preconfigured RIM Installer (Pro or above)
 
-無人接続またはプロンプト接続用のマシンを設定する最も簡単な方法の一つは、カスタムインストーラーを作成することです。これは大規模な展開を設定する場合や、定期的なサポートを提供する予定のエンドユーザーのコンピューターでRIMを簡単に稼働させる方法としても非常に有用です。
+One of the easiest ways to set up a machine for unattended or prompted connections is by creating a custom installer. This is incredibly useful if you are configuring mass deployments, or even as a simpler way to get RIM up and running on an end user's computer you plan on providing support for on the regular.
 
-これを行うには：
-1. ターゲット管理画面で「ターゲットインストーラーを作成」ボタンをクリックします。
-1. 最初に、このマシンを完全無人アクセス用に設定するか、ユーザーがプロンプトを受け入れて接続を開始するプロンプト付きアクセス用に設定するかを尋ねられます。
-1. 次に、ターゲットグループの割り当てを求められます。グループのページからインストーラー設定を開始した場合、ターゲットグループ選択は自動的に選択したグループに設定されることに注意してください。
-1. このインストーラーの有効期間を尋ねられます。 有効期間は7日から30日の間で設定可能、またはエンタープライズプランでは有効期限を「無期限」に設定することで永続的に有効にできます。
-1. ベース名の割り当てオプションが表示されます。このインストールパッケージ経由でプロビジョニングされるマシンには、このベース名が割り当てられます。
-1. チェックボックスが表示され、ユーザーがこのインストーラー経由でRIMをインストールした際のメール通知を有効化できます。
-1. エンタープライズ管理者には、インストーラーをMSIパッケージとしてビルドするチェックボックスが表示されます。このオプションは、指定されたターゲットグループに割り当てられるマシンクラスターへのカスタムインストーラーの一括展開に有用です。
-1. インストーラー名と任意のメモの入力が求められます。これらは内部記録用であり、作成されたインストーラーには表示されません。
-1. 「インストーラーをビルド」をクリックします。 ダウンロードリンクが表示されます。クリップボードにコピーしてエンドユーザーに送信するか、一括展開用に直接インストーラーをダウンロードできます。インストーラーを早期に無効化したい場合は、この画面から削除可能です。
+IN order to do this:
+1. In the target management screen, click the "Build Target Installer" button.
+1. You will first be asked if you want this machine to be configured for fully unattended access, or for prompted access in which the user has to accept a prompt to initiate the connection.
+1. You will then be asked for a target group assignment. Note that the target group selection will automatically go to your chosen target group if you initiate the installer configuration from your group's page.
+1. You will be asked how long you want this installer to be valid for. It can be valid for anywhere between 7 to 30 days, or permanently valid for enterprise plans by setting the expiration to never.
+1. You are then given the option to assign a bass name. Any machine provisioned via this installation package will have this base name assigned to it.
+1. You will then be presented with a checkbox that lets you opt into an email notification when a user installs RIM via this installer.
+1. If you are an enterprise admin, you will see a checkbox that allows you to build the installer as an MSI package. This option is useful for mass deployment of a custom installer to a machine cluster that will be designated to the given target group.
+1. You will be asked to provide an installer name, and optionally some notes. These are for internal records and will not appear within the created installer.
+1. Click on "Build Installer." You will be presented with the download link that you can copy to the clipboard and send to your end user. Alternatively, you may download the installer directly for use in mass deployments. You may delete the installer from this screen should you choose to render it inoperable prematurely.
 
-インストーラーを入手したら、以下のいずれかの方法で実行できます。いずれの場合も、サーバーに問い合わせてインストーラーの有効性を確認します。 インストーラーが有効な場合、インストール完了後に対象マシンがアカウントおよびRIMクライアントのマシンリストに追加されます。無効なインストーラーは実行されません。
+Now that you have your installer, it can be run in one of two ways. In either case, the installer will query the server to check the validity of the installer. If the installer is valid, the machine will be added to your list of machines in both your account as well as the RIM client after the installer is complete. An invalid installer will not run.
 
-#### 通常の実行
+#### Normal Execution
 
-ユーザーがインストーラーを実行すると、以下の情報を含むプロンプトが表示されます：
-* 技術者の氏名（該当する場合、所属組織名を含む）
-* 接続の性質（プロンプトが必要か否か）
+The user will get a prompt when running the installer, containing the following information:
+* The technician's name along with their organization, if applicable
+* the nature of the connection, I.E whether a prompt is required or not
 
-ユーザーはインストールに対して「はい」または「いいえ」を選択できます。「いいえ」を選択するとインストールはキャンセルされます。インストーラー終了後、リモートアクセス設定が完了した旨の通知が表示されます。
+The user can choose to either answer yes or no to the installation. Answering no will cancel the installation. After the installer finishes, the user will get a prompt informing them that their machine is now set up for remote access.
 
-#### サイレントインストール（エンタープライズ版インストーラー限定）
+#### Silent Install (Enterprise Installers Only)
 
-サイレントインストールは、実行可能インストーラーを */S* コマンドラインパラメータ付きで実行することで開始できます。これは、RIM を大規模展開ルーチンの一部としてインストールする際に有用です。
+A silent install can be initiated by running the executable installer with the */S* command line parameter. This is useful when installing RIM as part of a mass deployment routine.
 
-### セッション履歴
+### Session History
 
-RIM ダッシュボードから過去のセッション履歴全体を確認できます。セッション履歴には現在、各セッションの日時、接続先のコンピュータ名、セッションの継続時間が含まれています。 セッション行内の「コメントを追加」リンクから、セッションへのコメント追加も可能です。これは、インシデントの現在の状況について、自身のためだけでなく組織管理者向けにもメモを追加するのに便利です。
+You can view your entire history of past sessions through the RIM dashboard. The session history currently contains the date and time of each session, the name of the computer you connected to, and the duration of the session. You may also choose to add comments to a session via the "Add Comment" link within the session row. This is useful for adding notes on the current status of an incident for your own sake as well as for the sake of organization administrators.
 
-セッション履歴全体は、後でスプレッドシートアプリケーションで閲覧するためにエクスポートできます。セッション履歴テーブルの下にある「セッション履歴をCSVとしてダウンロード」ボタンをアクティブにすると、データエクスポート用のカスタマイズページが表示されます。 このページでは、エクスポート期間やフィールド区切り記号を選択できます。
+Your entire session history can be exported for later viewing via a spreadsheet application. Activate the "Download session history as CSV" button located below the session history table to reveal a customization page for your data export. On this page, you can choose the timespan of the export, as well as the symbol used to separate the fields.
 
-### サブスクリプション管理（個人プランとプロプラン）
+### Managing your Subscription (Personal and Pro Plans)
 
-ダッシュボードでは、RIMサブスクリプションの詳細を簡単に確認・管理できます。「サブスクリプションを管理」リンクをクリックすると、以下の操作が可能です：
-* プランのアップグレード
-* 支払い方法の更新
-* 定期支払いのキャンセル
+The dashboard allows you to easily view and manage your RIM subscription details. Upon clicking the "manage subscription" link, you can:
+* Upgrade your plan
+* Update your payment method
+* Cancel recurring payments
 
-#### プランのアップグレード
+#### Upgrading your Plan
 
-サブスクリプションは簡単にアップグレードできます。月額プランをご利用の場合、新しい料金から残りの期間分の料金が日割り計算され、翌月以降は新しい料金の全額が請求されます。「サブスクリプションをアップグレード」をクリックすると、初期のプラン選択ページとほぼ同じページが表示されます。主な違いは以下の通りです：
-* 対象マシン数が少ないプランへのダウングレードはできません。ただし、現在のプランと同マシン数の年間プランへのアップグレードは可能です。ダウングレードするには、現在のプランを解約し、有効期限が切れるのを待った後、対象マシン数が少ない新規プランを開始する必要があります。
-* エンタープライズプラン（エンタープライズアドオンを含む）は、このページから直接購入できません。
+You can easily upgrade your subscription. If you are on a monthly plan, you will be prorated the remaining charge from the new amount, with the full new amount being charged for subsequent months. Clicking "Upgrade Subscription" reveals a page nearly identical to the initial plan selection page. There are a few notable differences which we will outline below:
+* You cannot downgrade your plan to one with fewer machines. You can, however, upgrade from a monthly to a yearly plan with the same number of machines as your current plan. In order to downgrade, you would need to cancel your plan, wait for it to expire, then initiate a new plan with fewer machines.
+* Enterprise plans, including the enterprise addon, cannot be acquired directly through this page.
 
-#### 定期支払いのキャンセル方法
-　「自動更新をキャンセル」をクリックすると確認画面が表示され、現在の契約期間終了時にサブスクリプションが終了するよう設定されます。
+#### Canceling Recurring Payments
+
+When you click "Cancel Automatic Renewal," you will be asked for confirmation, after which your subscription will be set to expire at the end of the current term.

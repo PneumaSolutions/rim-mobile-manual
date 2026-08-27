@@ -1,35 +1,41 @@
 ---
-title: Connettersi
+title: Getting Connected
 ---
 
-import Windows from "~/components/platform/Windows.astro"
-import MacOS from "~/components/platform/MacOS.astro"
+import IOS from "~/components/platform/IOS.astro"
+import Android from "~/components/platform/Android.astro"
 
-Il processo di connessione di Remote Incident Manager è stato progettato all'insegna della velocità e della semplicità, sia per chi riceve assistenza sia per chi la fornisce.
+Remote Incident Manager's first-run experience is designed with speed and simplicity in mind. 
 
-### Connessione a un controllore
+### Logging into an Account
 
-Quando si avvia Remote Incident Manager per la prima volta, per impostazione predefinita ci si trova in modalità target. Ciò significa che vi connetterete a una persona che ha impostato una sessione di assistenza remota per voi.  
-Si aprirà una casella di modifica con l'etichetta "parola chiave" Inserite la parola chiave che vi verrà fornita dalla persona che vi assiste dopo avervi dato il via libera, quindi premete semplicemente invio. Ecco fatto, siete connessi!
+When you first launch Remote Incident Manager, you will be shown a Welcome screen giving you the opportunity to log into an account.
 
-### Accettare una richiesta di connessione
+Please note: The mobile version of Remote Incident Manager strictly serves as a controller. This means that it is exclusively used to connect to remote computers running the desktop client. We therefore recommend creating an account using the desktop client before initiating the login process.
 
-Se un tecnico fornisce assistenza regolarmente, il computer può essere impostato per ricevere una richiesta di connessione senza che nessuno dei due debba immettere una parola chiave. RIM emetterà un segnale acustico e annuncerà che il tecnico sta tentando di connettersi.  
-<Windows>Per accettare la connessione, premere **Windows+Shift+Y** e la sessione inizierà momentaneamente.</Windows>
-<MacOS>Per accettare la connessione, premere **Opzione+Maiusc+Y** e la sessione inizierà momentaneamente.</MacOS>
+1. Press the "Sign in" button to initiate the login process. When asked whether you would like to launch getrim.app in Safari, activate "Continue".
+1. Enter your email address.
+1. Enter the verification code that will be texted to your phone number.
+1. Once verification is successful, you will be placed in the main screen of the application.
 
-### Connessione a un obiettivo
+The application is divided into sections based on the two different connection types available to you.
 
-Il processo di impostazione della sessione è abbastanza simile. Invece di inserire la parola chiave, si dovrà passare al pulsante "Fornisci aiuto". Quando si esegue questa operazione per la prima volta, verrà chiesto di configurare un account.
-1. Inserire l'indirizzo e-mail.
-1. Controllare l'e-mail per ottenere un codice di verifica, quindi inserirlo in RIM.
-1. Verrà quindi richiesto di inserire il nome, la località e il numero di telefono.
-1. Infine, riceverete un altro codice di verifica sul telefono. Inserite questo codice in RIM.
-    1. Se non si dispone di un telefono cellulare in grado di ricevere messaggi di testo, compilare [questo modulo] (https://pneumasolutions.com/account-verification/). Vi aiuteremo a verificare il vostro account.
-    1. Una nota per i numeri internazionali: Se il codice di verifica non arriva, assicuratevi che il codice del Paese prima del vostro numero sia indicato con il segno più, anziché con 00.
+#### Keyword Session
 
-Una volta effettuato l'accesso, inserite la parola chiave che il destinatario utilizzerà per collegarsi a voi. Una volta superata la casella di modifica, si troveranno due caselle di controllo che determinano se avviare o meno una conversazione vocale o se disabilitare l'audio del computer remoto durante la sessione (queste opzioni possono essere attivate o disattivate anche durante la sessione). Successivamente, si trova il pulsante "Avvia". Facendo clic su questo pulsante, ci si troverà nella sala d'attesa fino a quando il bersaglio non si connetterà. A questo punto, si dovrà inviare la parola chiave appena inserita alla persona con cui ci si connetterà. La parola chiave è valida per 5 minuti o finché non viene stabilita una connessione di successo, a seconda di quale sia la prima. Una volta che la persona si sarà connessa, riceverete un avviso che vi informerà che la sessione remota sta per iniziare.  
+The **Keyword Session** portion of the app allows you to initiate a session with a remote computer by way of a keyword. In order to facilitate a keyword session:
 
-<Windows>Prendete nota della scorciatoia **Windows+Maiusc+Backspace** menzionata, perché farà apparire il menu RIM sul vostro computer. Se ci si affida esclusivamente alla tastiera, questo è l'unico modo per riportare l'input da tastiera al proprio sistema.</Windows>
-<MacOS>Osservate la scorciatoia **Opzione+Maiusc+Backspace** menzionata, in quanto essa richiamerà il menu RIM sul vostro computer. Se ci si affida esclusivamente alla tastiera, questo è l'unico modo per reindirizzare l'input da tastiera al proprio sistema.</MacOS>
-Dopo aver chiuso questa finestra di dialogo, verrà avviata la sessione remota.
+1. Enter the keyword in the "Keyword" text field.
+1. Toggle the "Start voice conversation" switch if you wish to have a voice conversation during the session.
+1. Press the "Connect with keyword" button to begin the connection process. You will be placed in a waitin screen.
+1. Send the keyword to the person who you wish to connect to.
+1. Once that person enters the keyword, your phone and their computer will instantly connect.
+
+#### My Machines
+
+The **My machines** section lists the machines you have configured for unattended or prompted access. This is the place you would expect to go if, for example, you plan on regularly connecting to your computer at home while out and about. Simply tap on any of the machines in the list, and one of two things will happen:
+1. In the case of an unattended session, the connection will instantly be established.
+1. In the case of a prompted session, the person you connect to will receive a prompt asking them if they would like you to connect.
+	1. A Windows user should press Windows+Shift+Y or Windows+Shift+N for yes or no, respectively.
+	1. A macOS user should press Option+Shift+Y or Option+Shift+N for yes or no, respectively.
+	1. If the user agrees to allow the connection, your session will be initiated.
+

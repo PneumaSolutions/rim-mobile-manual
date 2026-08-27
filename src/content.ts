@@ -28,11 +28,5 @@ export const pageOrder: string[] = [
   "installation",
   "gettingconnected",
   "workingwithsessions",
-  "keycommandreference",
   "dashboard",
-  "localization",
-  "faq",
-  "issues",
-  "plans",
-  "changelog",
 ]

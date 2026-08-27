@@ -13,16 +13,16 @@ const { lang, platform, slug } = Astro.props
 
 <div>
   {
-    platform === "windows" ? null : (
-      <a href={`/${lang}/windows/${slug}/`}>
-        <UIString key="platform.switchToWindows" />
+    platform === "ios" ? null : (
+      <a href={`/${lang}/ios/${slug}/`}>
+        <UIString key="platform.switchToIOS" />
       </a>
     )
   }
   {
-    platform === "macos" ? null : (
-      <a href={`/${lang}/macos/${slug}/`}>
-        <UIString key="platform.switchToMacOS" />
+    platform === "android" ? null : (
+      <a href={`/${lang}/android/${slug}/`}>
+        <UIString key="platform.switchToAndroid" />
       </a>
     )
   }

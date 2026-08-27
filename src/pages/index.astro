@@ -1,10 +1,9 @@
 ---
 import { pageOrder } from "~/content"
-import { getLanguageFromRequest, getPlatformFromRequest } from "~/util"
+import { DEFAULT_PLATFORM, getLanguageFromRequest } from "~/util"
 
 export const prerender = false
 
 const lang = getLanguageFromRequest(Astro.request)
-const platform = getPlatformFromRequest(Astro.request)
-return Astro.redirect(`/${lang}/${platform}/${pageOrder[0]}/`)
+return Astro.redirect(`/${lang}/${DEFAULT_PLATFORM}/${pageOrder[0]}/`)
 ---
