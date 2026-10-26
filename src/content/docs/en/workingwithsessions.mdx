@@ -17,14 +17,35 @@ A few things will happen immediately after the connection is established.
     - As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.
 - Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do either of the following:
     - Tap the "Session menu" button.
-    - Switch away from the app
+    - Switch away from the app.
 
 </IOS>
+
+<Android>
+- The remote control window for the session will appear.
+- You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
+- If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
+- A Mac target will pop up the keyboard setup assistant if this is the first time a controller has connected to it.
+    - This is for the Karabiner virtual keyboard, which listens to keyboard commands sent to it by a controller.
+    - As such, you will want to walk the target computer through the setup assistant, because it will be listening for remote keyboard presses in the identification process, not the Mac's own keyboard.
+- Last but not least, all keyboard and mouse input will immediately be directed to the target computer. To direct control back to your machine, do any of the following:
+    - Tap the "Session menu" button.
+    - Press Windows+Shift+Backspace.
+    - Switch away from the app.
+
+
+
+</Android>
 
 ### Remote Control Zone
 <IOS>
 At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, either bring up the session menu, or switch away from the app. You will be taken back to your machine until you switch back into the app or leave the session menu. When you go back into the session window, keyboard input will once again be directed to the client computer.
 </IOS>
+<Android>
+
+At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, either bring up the session menu, or switch away from the app. You will be taken back to your machine until you switch back into the app or leave the session menu. When you go back into the session window, keyboard input will once again be directed to the client computer.
+
+</Android>
 
 Once you're done, either the controller or the target can go into the session menu and choose the "Disconnect Session" option. When the session ends, the target machine will get a toast notification informing them of this.
 
@@ -37,7 +58,7 @@ Remote Incident Manager allows you to control a remote computer by way of a phys
 A physical keyboard is the most effective way to control a remote computer from your mobile device.
 
 <IOS>
-Remote Incident Manager does not require that any specific changes be made with in iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
+Remote Incident Manager does not require that any specific changes be made within iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
 - Notes for VoiceOver users:
     - At a minimum, it is crucial to disable all forms of Quick Nav. With Quick Nav on, arrow keys will not reach the target machine.
     - Ensure that your VoiceOver modifier key is not set to caps lock. Screen reader commands will not be sent to the target computer if there is a modifier conflict.
@@ -57,6 +78,24 @@ You have two options to work around this issue should you encounter it:
 Please report any keyboard issues you encounter so that they can be investigated. Additionally, if you are able to get Command+Tab to work, please inform us so that we can investigate a complete solution.
 
 </IOS>
+
+<Android>
+
+If a physical keyboard was connected when you first logged in to RIM, you were given the opportunity to enable the "RIM hardware keyboard" accessibility service. Enabling this service is highly encouraged, as it will allow all keys from a physical keyboard to reach the target computer while in a session.
+
+If you did not enable the service during the first-run experience, follow these steps to manually enable it:
+1. Tap the "Menu" button on the main screen.
+1. Once the menu appears, activate "Settings".
+1. Tap the "Capture Hardware Keyboard" toggle switch. This will take you to Android's accessibility settings.
+1. Locate and activate the "RIM hardware keyboard" service in the "Downloaded Apps" section of the accessibility settings.
+1. Activate the "Use RIM hardware keyboard" switch. You will be asked whether you wish to allow "RIM hardware keyboard" to have full control of your device.
+1. Tap the "Allow" button.
+
+From this point forward, all keyboard activity during a session will reach the target computer. The following actions direct keyboard input back to your mobile device:
+1. Activating the session menu.
+1. Exiting the app.
+
+</Android>
 
 #### Onscreen Control
 
@@ -96,15 +135,18 @@ While VoiceOver is off, the middle portion of the remote session screen will act
 
 </IOS>
 
+<Android>
+The middle portion of the remote session screen will act as a mouse or trackpad. While TalkBack is enabled, scrolling in any direction with two fingers will move the mouse.
+</Android>
 
-### The RIM Menu
+### The Session Menu
 
-As mentioned earlier, accessing the RIM menu directs you back to your mobile device. There are a number of options in this menu. They include:  
+As mentioned earlier, accessing the session menu directs you back to your mobile device. There are a number of options in this menu. They include:  
 <IOS>
 - Show Touch Keyboard: This toggle controls whether the touch keyboard and gesture-based control are enabled.
 - Send Text to Target: This option allows you to type a string of text to the target using your preferred screen-based input method.
 - Gesture Actions: This option opens the gesture customization screen.
-- Open Chat: Opens the text chat for a given session
+- Open Chat: Opens the text chat for a given session.
     - Note that this option additionally appears in the target-side session menu.
 - Transfer File from Target: Allows you to receive a file from the target computer.
     - Note that this option will only appear if a file is on the target machine's clipboard.
@@ -133,11 +175,40 @@ As mentioned earlier, accessing the RIM menu directs you back to your mobile dev
     - Remember that this option is available to both sides of the session.
 
 </IOS>  
+<Android>
+- Show Touch Keyboard: This toggle controls whether the touch keyboard is enabled.
+- Send Text to Target: This option allows you to type a string of text to the target using your preferred screen-based input method.
+- Open Chat: Opens the text chat for a given session.
+    - Note that this option additionally appears in the target-side session menu.
+- Transfer File from Target: Allows you to receive a file from the target computer.
+    - Note that this option will only appear if a file is on the target machine's clipboard.
+- Transfer Files to Target: Allows you to send a file from your device to the target computer.
+- Start/stop Voice Conversation: Allows you to toggle the voice conversation during the session.
+    - During an unattended session, this option will present a permissions dialogue to the target computer that the user must be present to respond to. However, prompted sessions still initiate voice conversations upon activation by the controller.
+- Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the end user will not need to worry about hearing speech.
+    - If a screen reader (including Remote Accessibility) is running, this option turns into a force quit for the running screen reader. This is useful when a target's screen reader stops responding to the extent you are unable to restart it normally.
+- Mute Target Audio Output: Allows you to silence the system audio output of the remote computer.
+    - Note that a running voice conversation will remain active while this setting is in effect, allowing you to talk with the person you are connected to while their system audio is inaudible to you.
+- Reboot and Reconnect: Allows you to reboot the computer and automatically reconnect the session.
+    - Note that a Mac target cannot start RIM pre-login due to platform limitations, notably FileVault.
+    - As such, RIM will reconnect once the user logs in.
+- Send Control+Alt+Delete: Sends this keystroke to the remote machine.
+    - An equivalent for this option is not yet implemented for Mac targets.
+- Request Unattended or Prompted Access: Allows you to send a request for unattended access to the client computer. This is useful if you are a sysadmin and need to perform routine maintenance, or even for something as simple as controlling your home machine while on the go.
+- Lock the Target Machine: Locks the target machine.
+- Connection Details: Provides a detailed lowdown on your connection, as well as the target machine. Information includes:
+    - Connection statistics
+    - Information about the computer, including operating system version, available RAM, etc.
+    - Running processes
+    - Installed packages
+- Disconnect Session: Terminates the session.
+    - Remember that this option is available to both sides of the session.
 
+</Android>
 
 ### Session Chat
 
-Text communication via RIM's built-in session chat capability can be a useful option in situations where a voice conversation isn't possible or practical. It can even be used to supplement an existing voice conversation, i.e., to send links, instructions, or the like.  
+Text communication via RIM's built-in session chat capability can be a useful option in situations where a voice conversation isn't possible or practical. It can even be used to supplement an existing voice conversation, e.g., to send links, instructions, or the like.  
 
 #### Starting a Chat
 
@@ -160,9 +231,18 @@ A session chat can be initiated in one of the following ways:
 While the chat window is in focus, messages will be presented in both speech and Braille as they arrive. A machine that does not have the chat window in focus will be alerted of chat messages through standard toast notifications.  
 While outside the message box, the chat can be navigated like a standard webpage. Messages sent by the party opposite from the one viewing the message can be copied to the clipboard via the "Copy" button adjacent to the message in question.
 
+<IOS>
 ### Customizing Gestures
 
-The "Gesture Actions" option, accessible  via the session menu, allows you to customize the keyboard commands triggered by each gesture.
+The "Gesture Actions" option, accessible via the session menu, allows you to customize the keyboard commands triggered by each gesture.
+</IOS>
+
+<Android>
+### Clipboard Sharing
+
+RIM automatically shares the clipboard between the controller and the target machine. Copying text to the target machine's clipboard makes it available for pasting on your mobile device, and vice versa.
+
+</Android>
 
 ### File Transfers
 
@@ -181,9 +261,15 @@ When a file is copied to the clipboard on the target computer, your mobile devic
 ### Remote Accessibility Module
 
 Whether you're assisting a user who doesn't use a screen reader, or you're diagnosing an issue with a malfunctioning screen reader, RIM is fully prepared to come to your aid. The Remote Accessibility Module will allow you to independently use a computer that is not currently running a screen reader. You will hear the target computer as if a screen reader were present, while avoiding the need to run an actual screen reader on the target computer.  
+<IOS>
 If your device is running VoiceOver while initiating a session with a remote computer that is not presently running a screen reader, the Remote Accessibility Module will automatically engage when the connection is established. Alternatively, you may enable the Remote Accessibility Module manually by activating the "Start Remote Accessibility" option off the session menu.
+</IOS>
 
-## Rebooting and Reconnecting
+<Android>
+If your device is running TalkBack while initiating a session with a remote computer that is not presently running a screen reader, the Remote Accessibility Module will automatically engage when the connection is established. Alternatively, you may enable the Remote Accessibility Module manually by activating the "Start Remote Accessibility" option off the session menu.
+</Android>
+
+### Rebooting and Reconnecting
 
 Whether you're installing system updates or working your way out of a system hang, RIM has got you covered during the reboot process. Selecting the "Reboot and Reconnect" option off the RIM menu will allow you to either perform a graceful reboot or an emergency reboot, depending on what state the computer is in. While the computer is rebooting, RIM will inform you that reconnection attempts are being made.  
 Note that if the computer is rebooted by a software installation or manually rebooted in the usual way, you will be asked if you wish to reconnect the session. Of further note is that in either case, Mac targets will only reconnect once the user logs in. This is because RIM cannot start automatically on the login screen due to platform limitations, most notably FileVault disk encryption.
@@ -200,8 +286,8 @@ There are a few ways to configure machines for unattended access.
 1. You will be asked what kind of connection you want to configure. Your options are:
     1. Unattended: Allows sessions to be initiated without any intervention whatsoever from the end user.
     1. Prompted: This configuration presents the user with a prompt informing them that you are connecting to their machine. They will need to press Windows+Shift+Y on Windows, or Option+Shift+Y on macOS, should they wish to accept the connection.
-1. You will be asked to give this machine a name. Enter a personal name for the machine, or if applicable, the machine ID as it appears in your workgroup.
-1. Press enter.
+1. You will be asked to give this machine a name. Enter a personal name for the machine, or, if applicable, the machine ID as it appears in your workgroup.
+1. Activate "Send Request" or press Enter.
 1. On the client machine, a dialogue pops up asking the user if they agree to their computer being set up for the access you requested. If they answer yes, then you will get a prompt informing you that the access has been approved.  
 
 ##### Note for Personal Unattended Account Holders
@@ -248,9 +334,9 @@ If you no longer want your machine to be controlled unattended, you can revoke t
 
 1. Access the Remote Incident Manager icon in your system tray.
     1. If using the keyboard, press Windows+B, then space, then left or right arrow until you find the icon.
-1. Right click this icon, or press the applications or shift+f10 key.
+1. Right-click this icon, or press the applications or shift+f10 key.
 1. Select the "Revoke Unattended Access" option.
-1. You will arrive at a list of computers, select the one you want to revoke.
+1. You will arrive at a list of computers. Select the one you want to revoke.
 1. You will be asked if you wish to revoke the machine; answer yes.  
 
 That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.
@@ -261,7 +347,7 @@ That's it! The controller will receive a message stating that this machine is no
     1. If using VoiceOver, press VO+M twice, then locate the Remote Incident Manager menu icon.
     1. Click this icon, or press VO+Space.  
 1. Select the "Revoke Unattended Access" option.
-1. You will arrive at a list of computers, select the one you want to revoke.
+1. You will arrive at a list of computers. Select the one you want to revoke.
 1. You will be asked if you wish to revoke the machine; answer yes.  
 
 That's it! The controller will receive a message stating that this machine is no longer available for unattended access. Should they need unattended access again, they can reinitiate the procedure to request permission for unattended access as described above.
