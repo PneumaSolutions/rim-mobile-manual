@@ -1,4 +1,4 @@
----
+﻿---
 import "bootstrap/dist/css/bootstrap.css"
 import "~/styles/general.css"
 
@@ -45,6 +45,7 @@ if (pageIndex < 0) {
   <body>
     <div>
       <h1>Remote Incident Manager (RIM)</h1>
+      <PlatformSwitcher lang={lang} platform={platform} slug={slug} />
     </div>
     <div class="container-fluid">
       <div class="sidebar">
@@ -91,6 +92,7 @@ if (pageIndex < 0) {
           </div>
           <slot />
         </main>
+          <PlatformSwitcher lang={lang} platform={platform} slug={slug} />
         <footer>
           {
             pageIndex === 0 ? null : (
