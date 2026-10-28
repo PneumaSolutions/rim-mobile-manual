@@ -8,7 +8,9 @@ import Android from "~/components/platform/Android.astro"
 ### Things to Know before you Begin
 
 A few things will happen immediately after the connection is established.
+
 <IOS>
+
 - The remote control window for the session will appear.
 - You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
 - If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
@@ -22,6 +24,7 @@ A few things will happen immediately after the connection is established.
 </IOS>
 
 <Android>
+
 - The remote control window for the session will appear.
 - You will be informed about the status of the running screen reader, or lack thereof, on the client's machine.
 - If the client is running a screen reader, a toast notification informing the user that the remote session has begun will provide instant confirmation that the user's system audio is working.
@@ -39,8 +42,11 @@ A few things will happen immediately after the connection is established.
 
 ### Remote Control Zone
 <IOS>
+
 At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, either bring up the session menu, or switch away from the app. You will be taken back to your machine until you switch back into the app or leave the session menu. When you go back into the session window, keyboard input will once again be directed to the client computer.
+
 </IOS>
+
 <Android>
 
 At this point, you're all set to perform whatever tasks need doing on the client side. Should you need to switch back to controlling your own machine, either bring up the session menu, or switch away from the app. You will be taken back to your machine until you switch back into the app or leave the session menu. When you go back into the session window, keyboard input will once again be directed to the client computer.
@@ -69,13 +75,12 @@ If VoiceOver is on and a keyboard is connected, a warning screen will appear adv
 
 ##### Notes Regarding macOS Targets
 
-We have found that using Command+Tab while inside the app does not work on some versions of iOS. This causes an inability to send Command+Tab to a macOS target with a physical keyboard.
+1. As previously stated, certain key combinations may perform iOS system functions. As such, keep in mind that pressing Command+Q on a physical keyboard will return to your iOS home screen. However, activating the "Quit App" shortcut from the Touch Keyboard will reliably forward the Command+Q keyboard command to the target.
+1. We have found that using Command+Tab while inside the app does not work on some versions of iOS. This causes an inability to send Command+Tab to a macOS target with a physical keyboard. You have two options to work around this issue should you encounter it:
+    * Press VO+F2 to activate the VoiceOver Window Chooser on the macOS target.
+    * Activate the "Switch App" shortcut from the Touch Keyboard.
 
-You have two options to work around this issue should you encounter it:
-* Press VO+F2 to activate the VoiceOver Window Chooser on the macOS target.
-* Activate the "Switch App" shortcut from the Touch Keyboard.
-
-Please report any keyboard issues you encounter so that they can be investigated. Additionally, if you are able to get Command+Tab to work, please inform us so that we can investigate a complete solution.
+Please report any keyboard issues you encounter so that they can be investigated. Additionally, if you are able to get any of the above combinations to work, please inform us so that we can investigate a complete solution.
 
 </IOS>
 
@@ -136,13 +141,16 @@ While VoiceOver is off, the middle portion of the remote session screen will act
 </IOS>
 
 <Android>
+
 The middle portion of the remote session screen will act as a mouse or trackpad. While TalkBack is enabled, scrolling in any direction with two fingers will move the mouse.
+
 </Android>
 
 ### The Session Menu
 
 As mentioned earlier, accessing the session menu directs you back to your mobile device. There are a number of options in this menu. They include:  
 <IOS>
+
 - Show Touch Keyboard: This toggle controls whether the touch keyboard and gesture-based control are enabled.
 - Send Text to Target: This option allows you to type a string of text to the target using your preferred screen-based input method.
 - Gesture Actions: This option opens the gesture customization screen.
@@ -176,6 +184,7 @@ As mentioned earlier, accessing the session menu directs you back to your mobile
 
 </IOS>  
 <Android>
+
 - Show Touch Keyboard: This toggle controls whether the touch keyboard is enabled.
 - Send Text to Target: This option allows you to type a string of text to the target using your preferred screen-based input method.
 - Open Chat: Opens the text chat for a given session.
@@ -232,12 +241,15 @@ While the chat window is in focus, messages will be presented in both speech and
 While outside the message box, the chat can be navigated like a standard webpage. Messages sent by the party opposite from the one viewing the message can be copied to the clipboard via the "Copy" button adjacent to the message in question.
 
 <IOS>
+
 ### Customizing Gestures
 
 The "Gesture Actions" option, accessible via the session menu, allows you to customize the keyboard commands triggered by each gesture.
+
 </IOS>
 
 <Android>
+
 ### Clipboard Sharing
 
 RIM automatically shares the clipboard between the controller and the target machine. Copying text to the target machine's clipboard makes it available for pasting on your mobile device, and vice versa.
