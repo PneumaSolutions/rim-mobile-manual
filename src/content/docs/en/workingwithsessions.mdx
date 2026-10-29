@@ -37,7 +37,8 @@ Remote Incident Manager allows you to control a remote computer by way of a phys
 A physical keyboard is the most effective way to control a remote computer from your mobile device.
 
 <IOS>
-Remote Incident Manager does not require that any specific changes be made with in iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
+
+Remote Incident Manager does not require that any specific changes be made within iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
 - Notes for VoiceOver users:
     - At a minimum, it is crucial to disable all forms of Quick Nav. With Quick Nav on, arrow keys will not reach the target machine.
     - Ensure that your VoiceOver modifier key is not set to caps lock. Screen reader commands will not be sent to the target computer if there is a modifier conflict.
@@ -46,15 +47,14 @@ Remote Incident Manager does not require that any specific changes be made with 
 
 If VoiceOver is on and a keyboard is connected, a warning screen will appear advising you of the usage limitations. You may disable this screen from appearing in the future should you not wish to be advised of this.
 
-##### A Note Regarding macOS Targets
+##### Notes Regarding macOS Targets
 
-We have found that using Command+Tab while inside the app does not work on some versions of iOS. This causes an inability to send Command+Tab to a macOS target with a physical keyboard.
+1. As previously stated, certain key combinations may perform iOS system functions. As such, keep in mind that pressing Command+Q on a physical keyboard will return to your iOS home screen. However, activating the "Quit App" shortcut from the Touch Keyboard will reliably forward the Command+Q keyboard command to the target.
+1. We have found that using Command+Tab while inside the app does not work on some versions of iOS. This causes an inability to send Command+Tab to a macOS target with a physical keyboard. You have two options to work around this issue should you encounter it:
+    * Press VO+F2 to activate the VoiceOver Window Chooser on the macOS target.
+    * Activate the "Switch App" shortcut from the Touch Keyboard.
 
-You have two options to work around this issue should you encounter it:
-* Press VO+F2 to activate the VoiceOver Window Chooser on the macOS target.
-* Activate the "Switch App" shortcut from the Touch Keyboard.
-
-Please report any keyboard issues you encounter so that they can be investigated. Additionally, if you are able to get Command+Tab to work, please inform us so that we can investigate a complete solution.
+Please report any keyboard issues you encounter so that they can be investigated. Additionally, if you are able to get any of the above combinations to work, please inform us so that we can investigate a complete solution.
 
 </IOS>
 
