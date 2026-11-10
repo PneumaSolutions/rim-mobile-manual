@@ -64,7 +64,9 @@ Remote Incident Manager allows you to control a remote computer by way of a phys
 A physical keyboard is the most effective way to control a remote computer from your mobile device.
 
 <IOS>
+
 Remote Incident Manager does not require that any specific changes be made within iOS in order to control a remote computer via the keyboard. It will be possible to perform a lot of computer functions without difficulty. However, please keep the following things in mind:
+
 - Notes for VoiceOver users:
     - At a minimum, it is crucial to disable all forms of Quick Nav. With Quick Nav on, arrow keys will not reach the target machine.
     - Ensure that your VoiceOver modifier key is not set to caps lock. Screen reader commands will not be sent to the target computer if there is a modifier conflict.
@@ -94,6 +96,7 @@ If you did not enable the service during the first-run experience, follow these 
 1. Tap the "Capture Hardware Keyboard" toggle switch. This will take you to Android's accessibility settings.
 1. Locate and activate the "RIM hardware keyboard" service in the "Downloaded Apps" section of the accessibility settings.
 1. Activate the "Use RIM hardware keyboard" switch. You will be asked whether you wish to allow "RIM hardware keyboard" to have full control of your device.
+    * RIM only uses this permission for the purpose of directing keyboard input from your phone to the target machine. This accessibility service does not engage in any way while outside of a remote session.
 1. Tap the "Allow" button.
 
 From this point forward, all keyboard activity during a session will reach the target computer. The following actions direct keyboard input back to your mobile device:
@@ -194,6 +197,7 @@ As mentioned earlier, accessing the session menu directs you back to your mobile
 - Transfer Files to Target: Allows you to send a file from your device to the target computer.
 - Start/stop Voice Conversation: Allows you to toggle the voice conversation during the session.
     - During an unattended session, this option will present a permissions dialogue to the target computer that the user must be present to respond to. However, prompted sessions still initiate voice conversations upon activation by the controller.
+    - Pixel users may need to disable Adaptive Sound in the "Sound & Vibration" category of Android's system settings before starting a voice conversation.
 - Start Remote Accessibility: This option appears when no screen reader is running on the remote computer. This will enable speech on your end, but the end user will not need to worry about hearing speech.
     - If a screen reader (including Remote Accessibility) is running, this option turns into a force quit for the running screen reader. This is useful when a target's screen reader stops responding to the extent you are unable to restart it normally.
 - Mute Target Audio Output: Allows you to silence the system audio output of the remote computer.
@@ -254,6 +258,8 @@ The "Gesture Actions" option, accessible via the session menu, allows you to cus
 
 RIM automatically shares the clipboard between the controller and the target machine. Copying text to the target machine's clipboard makes it available for pasting on your mobile device, and vice versa.
 
+Note that RIM cannot monitor the clipboard while another app is in the foreground.
+
 </Android>
 
 ### File Transfers
@@ -278,7 +284,7 @@ If your device is running VoiceOver while initiating a session with a remote com
 </IOS>
 
 <Android>
-If your device is running TalkBack while initiating a session with a remote computer that is not presently running a screen reader, the Remote Accessibility Module will automatically engage when the connection is established. Alternatively, you may enable the Remote Accessibility Module manually by activating the "Start Remote Accessibility" option off the session menu.
+If your device is running TalkBack or BackTalk while initiating a session with a remote computer that is not presently running a screen reader, the Remote Accessibility Module will automatically engage when the connection is established. Alternatively, you may enable the Remote Accessibility Module manually by activating the "Start Remote Accessibility" option off the session menu.
 </Android>
 
 ### Rebooting and Reconnecting
